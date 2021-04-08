@@ -1,4 +1,4 @@
-import database from "../database";
+import database from "../database.js";
 
 const productSchema = new database.Schema({
   id: {
@@ -20,6 +20,6 @@ const productSchema = new database.Schema({
   },
 });
 
-const Product = database.model("Product", productSchema);
+const productDatabase = database.model("Product", productSchema);
 
-export default Product;
+export default productDatabase;
