@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  frontend:
+    image: node:latest
+    container_name: frontend_inventory
+    restart: always
+    env_file:
+      - .env
+    depends_on:
+      - database
+    networks:
+      - inventory_control
+    ports:
+      - ${front_PORT}:${front_PORT}
+    volumes:
+      - ../../frontend:/usr/src/app
+    working_dir: /usr/src/app
+    command: yarn dev
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
