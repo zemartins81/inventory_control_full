@@ -4,7 +4,7 @@ const database = mongoose;
 
 database
   .connect(
-    `mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_ADDRESS}:27017/${process.env.MONGO_DATABASE}`,
+    `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_ADDRESS}/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -16,6 +16,6 @@ database
     console.log(`Não foi possível conectar no DB.  ${err}`);
   });
 
-database.Promise = global.Promise;
+//database.Promise = global.Promise;
 
 export default database;

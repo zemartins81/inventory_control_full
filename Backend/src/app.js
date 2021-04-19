@@ -1,14 +1,16 @@
 import express from "express";
 import { config } from "dotenv";
+import cors from "cors";
+import defaultRouter from "./routes/defaultRouter";
 // eslint-disable-next-line import/extensions
-import defaultRouter from "./routes/defaultRouter.js";
 
 config({
-  path: "./.env",
+  path: "./config/.env",
 });
 
 const app = express();
 
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 

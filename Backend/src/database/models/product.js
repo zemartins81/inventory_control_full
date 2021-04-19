@@ -6,6 +6,10 @@ const productSchema = new database.Schema({
     required: true,
     unique: true,
   },
+  name: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
     required: true,
@@ -17,6 +21,9 @@ const productSchema = new database.Schema({
   unit: {
     type: String,
     required: true,
+  },
+  operations: {
+    type: Array,
   },
 });
 

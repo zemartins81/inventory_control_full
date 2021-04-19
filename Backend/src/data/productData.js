@@ -1,16 +1,28 @@
-import database from "../database/models/product";
+import database from "../database/database";
 
-// eslint-disable-next-line no-return-await
-exports.getProducts = async () => await database.find({});
+const productData = {
+  getProducts: async () => {
+    return await database.find({});
+  },
+  getProductByDescription: async (description) => {
+    return await database.findOne({ description: `${description}` });
+  },
+  getProductById: async (id) => {
+    return await database.findOne({ _id: `${id}` });
+  },
+  saveProduct: async (product) => {
+    return await database.create(product);
+  },
+  updateProduct: async (_id, values) => {
+    return await database.findOneAndUpdate(
+      _id,
+      { $set: { ...values } },
+      { new: true }
+    );
+  },
+  deleteProduct: async (id) => {
+    return await database.deleteOne({ _id, id });
+  },
+};
 
-exports.getProduct = async (description) =>
-  await database.findOne({ description: `${description}` });
-
-exports.getProductById = async (id) => await database.findOne({ _id: `${id}` });
-
-exports.saveProduct = async (product) => await database.create(product);
-
-exports.updateProduct = async (_id, values) =>
-  database.findOneAndUpdate(_id, { $set: { ...values } }, { new: true });
-
-exports.deleteProduct = async (id) => database.deleteOne({ _id, id });
+export default productData;
