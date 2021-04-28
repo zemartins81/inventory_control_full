@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1619621474502" clover="3.2.0">
+  <project timestamp="1619621474502" name="All files">
+    <metrics statements="46" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="20" coveredmethods="0" elements="70" coveredelements="0" complexity="0" loc="46" ncloc="46" packages="7" files="7" classes="7"/>
+    <package name="src">
+      <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="app.js" path="/home/jcmartins81/Projetos/inventory_control/Backend/src/app.js">
+        <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.data">
+      <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+      <file name="productData.js" path="/home/jcmartins81/Projetos/inventory_control/Backend/src/data/productData.js">
+        <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.database">
+      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="database.js" path="/home/jcmartins81/Projetos/inventory_control/Backend/src/database/database.js">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.database.models">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="product.js" path="/home/jcmartins81/Projetos/inventory_control/Backend/src/database/models/product.js">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.helpers">
+      <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="errorControl.js" path="/home/jcmartins81/Projetos/inventory_control/Backend/src/helpers/errorControl.js">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.routes">
+      <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="productRouter.js" path="/home/jcmartins81/Projetos/inventory_control/Backend/src/routes/productRouter.js">
+        <metrics statements="8" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.services">
+      <metrics statements="15" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
+      <file name="productService.js" path="/home/jcmartins81/Projetos/inventory_control/Backend/src/services/productService.js">
+        <metrics statements="15" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="6" coveredmethods="0"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="8" count="0" type="stmt"/>
+        <line num="9" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

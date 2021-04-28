@@ -1,7 +1,7 @@
 import express from "express";
 import { config } from "dotenv";
 import cors from "cors";
-import defaultRouter from "./routes/defaultRouter";
+import defaultRouter from "./routes/defaultRouter.js";
 // eslint-disable-next-line import/extensions
 
 config({

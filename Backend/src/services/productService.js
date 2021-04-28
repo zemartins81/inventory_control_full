@@ -1,5 +1,5 @@
-import productData from "../data/productData";
-import errorControl from "../helpers/errorControl";
+import productData from "../data/productData.js";
+import errorControl from "../helpers/errorControl.js";
 
 const productService = {
   getProducts: async () => {
@@ -11,21 +11,28 @@ const productService = {
       return { status: errorControl.serverError.statusCode, error };
     }
   },
-  getProductByDescription: async (description) => {
-    return await productData.getProductByDescription(description);
+  getProductByDescription: async (description) =>
+    await productData.getProductByDescription(description),
+
+  getProductById: async (id) => await productData.getProductById(id),
+
+  setProduct: async (product) => {
+    try {
+      const data = await productData.saveProduct(product);
+      // if (!data) return { status: errorControl.dataNotSaved() };
+      return { status: 200, data };
+    } catch (error) {
+      return {
+        status: errorControl.serverError().statusCode,
+        message: errorControl.serverError().message,
+      };
+    }
   },
-  getProductById: async (id) => {
-    return await productData.getProductById(id);
-  },
-  saveProduct: async (product) => {
-    return await productData.saveProduct(product);
-  },
-  updateProduct: async (_id, values) => {
-    return await productData.updateProduct(_id, values);
-  },
-  deleteProduct: async (id) => {
-    return await deleteProduct(id);
-  },
+
+  updateProduct: async (_id, values) =>
+    await productData.updateProduct(_id, values),
+
+  deleteProduct: async (id) => await deleteProduct(id),
 };
 
 export default productService;

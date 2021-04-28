@@ -1,11 +1,6 @@
-import database from "../database";
+import database from "../database.js";
 
 const productSchema = new database.Schema({
-  id: {
-    type: Number,
-    required: true,
-    unique: true,
-  },
   name: {
     type: String,
     required: true,

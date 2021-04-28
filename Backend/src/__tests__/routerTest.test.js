@@ -1,7 +1,7 @@
 import request from "supertest";
 import app from "../app";
 
-describe("Teste de Rota do gerenciador de Inventário", function () {
+describe("Teste de Rota do gerenciador de Inventário", () => {
   it("Retorna erro 404 caso a rota acessada seja inválida!", async (done) => {
     const response = await request(app).get("/qualquer_rota");
 
@@ -10,10 +10,14 @@ describe("Teste de Rota do gerenciador de Inventário", function () {
     done();
   });
 
-  it("Deve retornar status 500 quando não conseguir buscar os produtos", async (done) => {
-    const response = await request(app).get("/products");
+  it("Cria um produto", async () => {
+    const response = await request(app).post("/products").set({
+      name: "paper",
+      amount: 500,
+      unit: "fls",
+    });
 
-    expect(response.status).toBe(500);
-    done();
+    expect(response.status).toBe(200);
+    expect(response.res.data).toBeTruthy();
   });
 });
