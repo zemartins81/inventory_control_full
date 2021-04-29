@@ -14,12 +14,31 @@ const productService = {
   getProductByDescription: async (description) =>
     await productData.getProductByDescription(description),
 
-  getProductById: async (id) => await productData.getProductById(id),
+  getProductById: async (id) => {
+    try {
+      const data = await productData.getProductById(id);
+      if (!data)
+        return {
+          status: errorControl.NotFound().statusCode,
+          message: errorControl.NotFound().message,
+        };
+      return { status: 200, data };
+    } catch (error) {
+      return {
+        status: errorControl.serverError().statusCode,
+        message: errorControl.serverError().message,
+      };
+    }
+  },
 
   setProduct: async (product) => {
     try {
       const data = await productData.saveProduct(product);
-      // if (!data) return { status: errorControl.dataNotSaved() };
+      if (data.message)
+        return {
+          status: errorControl.badRequest().statusCode,
+          message: data.message,
+        };
       return { status: 200, data };
     } catch (error) {
       return {

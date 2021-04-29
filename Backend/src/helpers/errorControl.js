@@ -9,7 +9,7 @@ const errorControl = {
   }),
   serverError: () => ({
     statusCode: 500,
-    message: "Data not saved!",
+    message: "Internal Server Error",
   }),
   dataNotSaved: () => ({
     statusCode: 500,
