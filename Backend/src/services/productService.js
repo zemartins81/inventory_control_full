@@ -1,4 +1,6 @@
+// eslint-disable-next-line import/extensions
 import productData from "../data/productData.js";
+// eslint-disable-next-line import/extensions
 import errorControl from "../helpers/errorControl.js";
 
 const productService = {
@@ -11,6 +13,17 @@ const productService = {
       return { status: errorControl.serverError.statusCode, error };
     }
   },
+
+  getProductByName: async (name) => {
+    try {
+      const data = await productData.getProductByName(name);
+      if (!data) return { status: errorControl.serverError.statusCode };
+      return { status: 200, data };
+    } catch (error) {
+      return { status: errorControl.serverError.statusCode, error };
+    }
+  },
+
   getProductByDescription: async (description) =>
     await productData.getProductByDescription(description),
 

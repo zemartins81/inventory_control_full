@@ -1,3 +1,4 @@
+import escapeStringRegexp from "escape-string-regexp";
 import Product from "../database/models/product.js";
 
 const productData = {
@@ -9,9 +10,11 @@ const productData = {
   getProductByDescription: async (description) =>
     await Product.findOne({ description: `${description}` }),
 
-  getProductById: async (id) => {
-    const data = await Product.findOne({ _id: `${id}` });
-    return data;
+  getProductById: async (id) => await Product.findOne({ _id: `${id}` }),
+
+  getProductByName: async (name) => {
+    const $regex = escapeStringRegexp(name);
+    return Product.find({ name: { $regex } }).sort({ name: 1 });
   },
 
   saveProduct: async (product) => {

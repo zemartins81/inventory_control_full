@@ -1,0 +1,54 @@
+###
+//Get All
+
+GET http://172.29.226.125:3000/products
+Accept: application/json
+
+###
+
+//Get By Id
+
+GET http://172.29.226.125:3000/products?id=608ae748b70da30598369e63
+Accept: application/json
+
+###
+
+//get product by name
+
+GET http://172.29.226.125:3000/products?name=Tonner
+Accept: application/json
+
+###
+
+//Create Product
+POST http://172.29.226.125:3000/products
+Content-Type: application/json
+
+{
+  "name": "Tonner 43x",
+  "description": "Tonner para impressora",
+  "amount": 5,
+  "unit": "un"
+}
+
+###
+
+//Recusa o cadastro se estiverem faltando dados
+POST http://172.29.226.125:3000/products
+Content-Type: application/json
+
+{
+"description": "Tonner para impressora",
+"amount": 5,
+"unit": "un"
+}
+
+###
+
+//Recusa o cadastro se não for passado nenhum dado
+POST http://172.29.226.125:3000/products
+Content-Type: application/json
+
+{
+
+}
