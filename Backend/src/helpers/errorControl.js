@@ -15,6 +15,10 @@ const errorControl = {
     statusCode: 500,
     message: "Data not saved!",
   }),
+  noContent: () => ({
+    statusCode: 204,
+    message: "Product Not Found!",
+  }),
 };
 
 export default errorControl;

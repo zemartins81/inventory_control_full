@@ -7,33 +7,70 @@ const productService = {
   getProducts: async () => {
     try {
       const data = await productData.getProducts();
-      if (!data) return { status: errorControl.serverError.statusCode };
+      if (data.length === 0)
+        return {
+          status: errorControl.NotFound().statusCode,
+          message: errorControl.NotFound().message,
+        };
+      if (data.message)
+        return {
+          status: errorControl.badRequest().statusCode,
+          message: data.message,
+        };
       return { status: 200, data };
     } catch (error) {
-      return { status: errorControl.serverError.statusCode, error };
+      return { status: errorControl.serverError().statusCode, error };
     }
   },
 
   getProductByName: async (name) => {
     try {
       const data = await productData.getProductByName(name);
-      if (!data) return { status: errorControl.serverError.statusCode };
+      if (data.length === 0)
+        return {
+          status: errorControl.NotFound().statusCode,
+          message: errorControl.NotFound().message,
+        };
+      if (data.message)
+        return {
+          status: errorControl.badRequest().statusCode,
+          message: data.message,
+        };
       return { status: 200, data };
     } catch (error) {
       return { status: errorControl.serverError.statusCode, error };
     }
   },
 
-  getProductByDescription: async (description) =>
-    await productData.getProductByDescription(description),
+  getProductByDescription: async (description) => {
+    try {
+      const data = await productData.getProductByDescription(description);
+      if (data.length === 0)
+        return {
+          status: errorControl.NotFound().statusCode,
+          message: errorControl.NotFound().message,
+        };
+      if (data.message)
+        return {
+          status: errorControl.badRequest().statusCode,
+          message: data.message,
+        };
+      return { status: 200, data };
+    } catch (error) {
+      return {
+        status: errorControl.serverError().statusCode,
+        message: errorControl.serverError().message,
+      };
+    }
+  },
 
   getProductById: async (id) => {
     try {
       const data = await productData.getProductById(id);
-      if (!data)
+      if (data.message)
         return {
-          status: errorControl.NotFound().statusCode,
-          message: errorControl.NotFound().message,
+          status: errorControl.badRequest().statusCode,
+          message: data.message,
         };
       return { status: 200, data };
     } catch (error) {
@@ -61,10 +98,40 @@ const productService = {
     }
   },
 
-  updateProduct: async (_id, values) =>
-    await productData.updateProduct(_id, values),
+  updateProduct: async (_id, values) => {
+    try {
+      const data = await productData.updateProduct(_id, values);
+      if (data.message)
+        return {
+          status: errorControl.noContent().statusCode,
+          message: errorControl.noContent().message,
+        };
+      return { status: 200, data };
+    } catch (error) {
+      return {
+        status: errorControl.serverError().statusCode,
+        message: errorControl.noContent().message,
+      };
+    }
+  },
 
-  deleteProduct: async (id) => await deleteProduct(id),
+  deleteProduct: async (id) => {
+    try {
+      const data = await productData.deleteProduct(id);
+      if (data.message)
+        return {
+          status: errorControl.noContent().statusCode,
+          message: errorControl.noContent().message,
+        };
+      return { status: 200, data };
+    } catch (error) {
+      return {
+        status: errorControl.serverError().statusCode,
+        message: errorControl.noContent().message,
+      };
+
+    }
+  },
 };
 
 export default productService;

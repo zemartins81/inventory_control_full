@@ -2,13 +2,12 @@ import escapeStringRegexp from "escape-string-regexp";
 import Product from "../database/models/product.js";
 
 const productData = {
-  getProducts: async () => {
-    const result = await Product.find();
-    return result;
-  },
+  getProducts: async () => await Product.find(),
 
-  getProductByDescription: async (description) =>
-    await Product.findOne({ description: `${description}` }),
+  getProductByDescription: async (description) => {
+    const $regex = escapeStringRegexp(description);
+    return Product.find({ description: { $regex } }).sort({ name: 1 });
+  },
 
   getProductById: async (id) => await Product.findOne({ _id: `${id}` }),
 
@@ -25,9 +24,13 @@ const productData = {
   },
 
   updateProduct: async (_id, values) =>
-    await Product.findOneAndUpdate(_id, { $set: { ...values } }, { new: true }),
+    await Product.findByIdAndUpdate(
+      _id,
+      { $set: { ...values } },
+      { new: true }
+    ),
 
-  deleteProduct: async (id) => await Product.deleteOne({ _id, id }),
+  deleteProduct: async (id) => Product.findByIdAndDelete(id)
 };
 
 export default productData;
