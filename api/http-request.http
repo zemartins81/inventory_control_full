@@ -1,0 +1,100 @@
+###
+//Get All
+
+GET http://172.22.52.221:3000/products
+Accept: application/json
+
+
+> {%
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 200, "Response status is not 200");
+});
+%}
+
+###
+
+//Get By Id
+
+GET http://172.22.52.221:3000/products?id=608ae748b70da30598369e63
+Accept: application/json
+
+###
+
+//get product by name
+
+GET http://172.22.52.221:3000/products?name=Tonn
+Accept: application/json
+
+###
+
+//get product by description
+
+GET http://172.22.52.221:3000/products?description=impressora
+Accept: application/json
+
+###
+
+//Create Product
+POST http://172.22.52.221:3000/products
+Content-Type: application/json
+
+{
+  "name": "Tonner 43x",
+  "description": "Tonner para impressora",
+  "amount": 5,
+  "unit": "un"
+}
+
+###
+
+//Recusa o cadastro se estiverem faltando dados
+POST http://172.22.52.221:3000/products
+Content-Type: application/json
+
+{
+  "description": "Tonner para impressora",
+  "amount": 5,
+  "unit": "un"
+}
+
+###
+
+//Recusa o cadastro se não for passado nenhum dado
+POST http://172.22.52.221:3000/products
+Content-Type: application/json
+
+{
+}
+
+###
+
+//Atualiza os dados de um produto
+PATCH http://172.22.52.221:3000/products?id=608c0d986428c001e945e984
+Content-Type: application/json
+
+{
+  "description": "Tonner para a impressora do zé",
+  "amount": "5"
+}
+
+###
+
+//Recusa a atualização se o id for inválido
+
+PATCH http://172.22.52.221:3000/products?id=608c0d986428c001e945e98a
+Content-Type: application/json
+
+{
+  "name": "Papel pacú",
+  "description": "Para limpar o pé",
+  "amount": "5"
+}
+
+###
+
+//Deve excluir um produto
+
+DELETE http://172.22.52.221:3000/products?id=609075d77f47c728e34e79cd
+Content-Type: application/json
+
+###

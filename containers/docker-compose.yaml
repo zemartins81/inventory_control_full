@@ -10,7 +10,7 @@ services:
     ports:
       - 3001:3001
     volumes:
-      - ../backend:/usr/src/app
+      - ../api:/usr/src/app
     working_dir: /usr/src/app
     command: yarn dev
     logging:
@@ -29,7 +29,7 @@ services:
     environment:
       - NODE_ENV=development
     volumes: # Volume binding
-      - "../frontend/inventory-control:/usr/src/app"
+      - "../inventory-control:/usr/src/app"
       - "/app/node_modules"
     working_dir: /usr/src/app
     command: npm start
