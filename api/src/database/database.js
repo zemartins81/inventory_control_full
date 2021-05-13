@@ -1,16 +1,20 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
-import path, { join } from "path";
 
-const __dirname = path.dirname("../");
+import dotenv from "dotenv";
+import path from "path";
+
+
+const {resolve, join} = path;
+
 dotenv.config({
-  path: join(__dirname, ".env"),
+  path: join(resolve(), "./src/config/", ".env"),
 });
 
+const uri = process.env.MONGODB_CONNECTION
 const database = mongoose;
 
 database
-  .connect( `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.pixlg.gcp.mongodb.net/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`,
+  .connect( uri,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
