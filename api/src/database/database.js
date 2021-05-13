@@ -1,9 +1,16 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+import path, { join } from "path";
+
+const __dirname = path.dirname("../");
+dotenv.config({
+  path: join(__dirname, ".env"),
+});
 
 const database = mongoose;
 
 database
-  .connect( `mongodb+srv://jcmartins81:TFwupFllERaz2t6z@cluster0.pixlg.gcp.mongodb.net/InventoryControl?retryWrites=true&w=majority`,
+  .connect( `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.pixlg.gcp.mongodb.net/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
