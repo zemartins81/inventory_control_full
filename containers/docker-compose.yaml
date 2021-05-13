@@ -12,7 +12,7 @@ services:
     volumes:
       - ../api:/usr/src/app
     working_dir: /usr/src/app
-    command: yarn dev
+    command: bash -c "yarn && yarn dev"
     logging:
       driver: "json-file"
       options:
@@ -32,7 +32,7 @@ services:
       - "../inventory-control:/usr/src/app"
       - "/app/node_modules"
     working_dir: /usr/src/app
-    command: npm start
+    command: bash -c "yarn && yarn start"
 
 networks:
   inventory_control_networks:
