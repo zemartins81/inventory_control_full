@@ -35,12 +35,12 @@ Accept: application/json
 ###
 
 //Create Product
-POST http://172.22.52.221:3000/products
+POST http://0.0.0.0:3001/products
 Content-Type: application/json
 
 {
-  "name": "Tonner 43x",
-  "description": "Tonner para impressora",
+  "name": "Etiquetas 6288",
+  "description": "impressora",
   "amount": 5,
   "unit": "un"
 }
