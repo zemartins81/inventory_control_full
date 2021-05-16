@@ -1,16 +1,22 @@
 import React, {useEffect, useState} from 'react'
 import Products from '../compoents/content/products/Products'
-import Header from '../compoents/header/Header'
-import {getAllProducts} from '../services/apiService'
+import {getProductList} from '../services/apiService'
 import Loading from "../compoents/content/Loading";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Cadastro from "../compoents/content/cadastro/Cadastro";
+import MenuPrincipal from "../compoents/content/menuPrincipal/MenuPrincipal";
 
 export default function ProductList() {
-  const [products, setProducts] = useState([])
+  const [allProducts, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    async function getProductList() {
-      const productsList = await getAllProducts()
+    const getAllProducts = async() => {
+      const productsList = await getProductList()
       setProducts(productsList.data);
 
       setTimeout(() => {
@@ -18,9 +24,9 @@ export default function ProductList() {
       }, 500)
     }
 
-    getProductList();
+    getAllProducts();
 
-  }, []);
+  }, [allProducts]);
 
   let data = (
     <div className="flex flex-row items-center justify-center">
@@ -28,12 +34,27 @@ export default function ProductList() {
     </div>
   )
 
-  if (!loading) data = <Products products={products}/>
+  if (!loading) data = (
+      <Switch>
+        <Route path="/projetos">
+          <Cadastro />
+        </Route>
+        <Route path="/">
+          <Products products={allProducts}/>
+        </Route>
+      </Switch>
+  )
 
   return (
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-         <Header>Controle de Estoque</Header>
+        <Router>
+          <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <MenuPrincipal/>
+        </div>
+
+        <div className="container  max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {data}
         </div>
+
+        </Router>
     )
 }

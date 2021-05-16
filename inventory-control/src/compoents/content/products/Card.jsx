@@ -5,7 +5,7 @@ export default function Card({product}) {
   const { name, description, amount, unit } = product
 
     return (
-        <div className="bg-white rounded-xl lg:w-1/3 w-full lg:p-6 mx-auto my-2 bd">
+        <div className="bg-white rounded-xl">
             <div className="md:w-9/10 w-full">
                 <img src="./img/embreve.jpg" alt="embreve.jpg" className="rounded-lg shadow-lg antialiased p-1"/>
             </div>
