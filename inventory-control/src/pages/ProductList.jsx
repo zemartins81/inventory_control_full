@@ -17,16 +17,21 @@ export default function ProductList() {
   useEffect(() => {
     const getAllProducts = async() => {
       const productsList = await getProductList()
-      setProducts(productsList.data);
-
-      setTimeout(() => {
-        setLoading(false)
-      }, 500)
+      const orderedList = await productsList.data.sort(function (a, b) {
+        const aName = a.name.toLowerCase()
+        const bName = b.name.toLowerCase()
+        return aName < bName ? -1 : aName > bName ? 1 : 0;
+      })
+      setProducts(orderedList);
     }
 
-    getAllProducts();
+    getAllProducts()
+      .then(r => {
+        setLoading(false)
+      })
+      .catch(error => alert("Não foi possível conectar ao Servidor!"));
 
-  }, [allProducts]);
+  }, []);
 
   let data = (
     <div className="flex flex-row items-center justify-center">

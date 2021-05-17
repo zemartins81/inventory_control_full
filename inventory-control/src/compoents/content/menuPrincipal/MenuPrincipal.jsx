@@ -9,12 +9,12 @@ export default function MenuPrincipal() {
     <div className="grid lg:grid-cols-2  place-items-center md:grid-cols-1 sm:grid-cols-1">
       <div>
         <Link to="/" className=" text-white px-16 py-2 rounded-md text-xl font-medium hover:bg-green-700  hover:text-white ">
-          Materiais
+          Produtos
         </Link>
       </div>
       <div>
-        <Link to="/projetos" className=" text-white px-16 py-2 rounded-md text-sm font-medium hover:bg-green-700 hover:text-white text-xl">
-          Cadastro
+        <Link to="/produtos" className=" text-white px-16 py-2 rounded-md text-sm font-medium hover:bg-green-700 hover:text-white text-xl">
+          Cadastrar Produto
         </Link>
       </div>
     </div>
