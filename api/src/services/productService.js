@@ -9,17 +9,17 @@ const productService = {
       const data = await productData.getProducts();
       if (data.length === 0)
         return {
-          status: errorControl.NotFound().statusCode,
-          message: errorControl.NotFound().message,
+          status: 200,
+          data,
         };
       if (data.message)
         return {
           status: errorControl.badRequest().statusCode,
           message: data.message,
         };
-      return {status: 200, data};
+      return { status: 200, data };
     } catch (error) {
-      return {status: errorControl.serverError().statusCode, error};
+      return { status: errorControl.serverError().statusCode, error };
     }
   },
 
@@ -36,9 +36,9 @@ const productService = {
           status: errorControl.badRequest().statusCode,
           message: data.message,
         };
-      return {status: 200, data};
+      return { status: 200, data };
     } catch (error) {
-      return {status: errorControl.serverError.statusCode, error};
+      return { status: errorControl.serverError.statusCode, error };
     }
   },
 
@@ -55,7 +55,7 @@ const productService = {
           status: errorControl.badRequest().statusCode,
           message: data.message,
         };
-      return {status: 200, data};
+      return { status: 200, data };
     } catch (error) {
       return {
         status: errorControl.serverError().statusCode,
@@ -72,7 +72,7 @@ const productService = {
           status: errorControl.badRequest().statusCode,
           message: data.message,
         };
-      return {status: 200, data};
+      return { status: 200, data };
     } catch (error) {
       return {
         status: errorControl.serverError().statusCode,
@@ -89,7 +89,7 @@ const productService = {
           status: errorControl.badRequest().statusCode,
           message: data.message,
         };
-      return {status: 200, data};
+      return { status: 200, data };
     } catch (error) {
       return {
         status: errorControl.serverError().statusCode,
@@ -106,7 +106,7 @@ const productService = {
           status: errorControl.noContent().statusCode,
           message: errorControl.noContent().message,
         };
-      return {status: 200, data};
+      return { status: 200, data };
     } catch (error) {
       return {
         status: errorControl.serverError().statusCode,
@@ -123,13 +123,12 @@ const productService = {
           status: errorControl.noContent().statusCode,
           message: errorControl.noContent().message,
         };
-      return {status: 200, data};
+      return { status: 200, data };
     } catch (error) {
       return {
         status: errorControl.serverError().statusCode,
         message: errorControl.noContent().message,
       };
-
     }
   },
 };

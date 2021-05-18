@@ -5,17 +5,17 @@ const productRouter = express.Router();
 
 productRouter.get("/", async (req, res) => {
   if (req.query.id) {
-    const {id} = req.query;
+    const { id } = req.query;
     const result = await productService.getProductById(id);
     return res.status(result.status).send(result);
   }
   if (req.query.name) {
-    const {name} = req.query;
+    const { name } = req.query;
     const result = await productService.getProductByName(name);
     return res.status(result.status).send(result);
   }
   if (req.query.description) {
-    const {description} = req.query;
+    const { description } = req.query;
     const result = await productService.getProductByDescription(description);
     return res.status(result.status).send(result);
   }
@@ -31,15 +31,15 @@ productRouter.post("/", async (req, res) => {
 
 productRouter.patch("/", async (req, res) => {
   const dataUpdate = req.body;
-  const {id} = req.query;
+  const { id } = req.query;
   const result = await productService.updateProduct(id, dataUpdate);
   return res.status(result.status).send(result);
 });
 
 productRouter.delete("/", async (req, res) => {
-  const {id} = req.query
-  const result = await productService.deleteProduct(id)
+  const { id } = req.query;
+  const result = await productService.deleteProduct(id);
   return res.status(result.status).send(result);
-})
+});
 
 export default productRouter;

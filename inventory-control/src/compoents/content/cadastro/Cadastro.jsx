@@ -1,29 +1,27 @@
-import React, {useEffect, useState} from "react";
+import React, { useState} from "react";
 import {postNewProduct} from "../../../services/apiService";
-import { useHistory } from "react-router-dom";
 
 
 
-export default function Cadastro() {
+export default function Cadastro({atualizaListaDeProdutos}) {
 
   const [newProduct, setNewProduct] = useState({})
   const [alertVisible, setAlertVisible] = useState(false)
-
-  const history = useHistory()
+  const [successVisible, setSuccessVisible] = useState(false)
 
   const handleClick = async (event) => {
     event.preventDefault()
+    
     try{
-      console.log(newProduct)
+      
       const result = await postProduct({...newProduct})
-
-      console.log(result)
 
       if (result.status === 200) {
         document.getElementById("form").reset()
         setNewProduct({})
         setAlertVisible(false)
-        history.push({path: "/", state: true});
+        setSuccessVisible(true)
+        atualizaListaDeProdutos(true)
       }
 
     }catch (e) {
@@ -35,6 +33,7 @@ export default function Cadastro() {
   const handleInputChange = (event) => {
     const target = event.target
     setAlertVisible(false)
+    setSuccessVisible(false)
     if (target.value || target.selected) {
       const value = target.type === "select" ? target.selected : target.value
       const name = target.name;
@@ -54,10 +53,17 @@ const Alert = () => (
       </div>
 )
 
+const Success = () => (
+    <div className=" container bg-green-200 relative text-center text-green-500 py-3 px-3 rounded-lg">
+    <p>Produto cadastrado com sucesso!</p>
+  </div>
+)
+
 
   return (
     <>
       {alertVisible? <Alert/> : null}
+      {successVisible? <Success /> : null}
       <div className="container bg-gray-200 p-2 my-4 rounded-xl flex-grow">
         <h1 className="text-center font-semibold text-4xl text-black my-8">Cadastro de Produtos</h1>
 

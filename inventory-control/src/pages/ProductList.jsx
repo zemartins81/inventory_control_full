@@ -10,9 +10,10 @@ import {
 import Cadastro from "../compoents/content/cadastro/Cadastro";
 import MenuPrincipal from "../compoents/content/menuPrincipal/MenuPrincipal";
 
-export default function ProductList() {
+export default function ProductList( ) {
   const [allProducts, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
+  const [refreshList, setRefreshList] = useState(false)
 
   useEffect(() => {
     const getAllProducts = async() => {
@@ -28,10 +29,15 @@ export default function ProductList() {
     getAllProducts()
       .then(r => {
         setLoading(false)
+        setRefreshList(false)
       })
       .catch(error => alert("Não foi possível conectar ao Servidor!"));
 
-  }, []);
+  }, [refreshList]);
+
+const atualizaListaDeProdutos = (value) => {
+  setRefreshList(value)
+}
 
   let data = (
     <div className="flex flex-row items-center justify-center">
@@ -41,8 +47,8 @@ export default function ProductList() {
 
   if (!loading) data = (
       <Switch>
-        <Route path="/projetos">
-          <Cadastro />
+        <Route path="/produtos">
+          <Cadastro atualizaListaDeProdutos={atualizaListaDeProdutos}/>
         </Route>
         <Route path="/">
           <Products products={allProducts}/>
@@ -53,7 +59,7 @@ export default function ProductList() {
   return (
         <Router>
           <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <MenuPrincipal/>
+            <MenuPrincipal />
         </div>
 
         <div className="container  max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
