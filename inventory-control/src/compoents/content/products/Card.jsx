@@ -1,11 +1,12 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-export default function Card({product}) {
+export default function Card({product, handleInputEdit}) {
 
   const { name, description, amount, unit } = product
 
-  const handleEditClick = (event) => {
-      console.log("Fui clicado " + product._id)
+  const handleEditClick = () => {
+      handleInputEdit(product)
   }
 
     return (
@@ -15,7 +16,7 @@ export default function Card({product}) {
             </div>
             <div className="px-2 m-1 ">
                 <div className="container grid place-items-end">
-                    <img src="./img/edit.png" className="w-6" onClick={handleEditClick}></img>
+                <Link to="/cadastrar_produtos"><img src="./img/edit.png" alt="edit.png" className="w-6" onClick={handleEditClick}></img></Link>
                 </div>
                 <h1 className="text-2xl text-black font-semibold leading-tight text-center">{name}</h1>
                 <p className="m-1"><b>Descrição:</b> {description}</p>

@@ -5,7 +5,7 @@ import Loading from "../compoents/content/Loading";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
 } from "react-router-dom";
 import Cadastro from "../compoents/content/cadastro/Cadastro";
 import MenuPrincipal from "../compoents/content/menuPrincipal/MenuPrincipal";
@@ -13,10 +13,11 @@ import Card from '../compoents/content/products/Card'
 
 export default function ProductList( ) {
 
-const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const [refreshList, setRefreshList] = useState(false)
   const [filterValue, setFilterValue] = useState("")
+  const [editProduct, setEditProduct] = useState([])
 
   useEffect(() => {
     const getAllProducts = async() => {
@@ -50,6 +51,11 @@ const handleFilterChange = (event) => {
   setFilterValue(event.currentTarget.value)
 }
 
+const handleInputEdit = (editProduct) => {
+  setEditProduct(editProduct)
+  
+}
+
   let data = (
     <div className="flex flex-row items-center justify-center">
       <Loading/>
@@ -58,8 +64,8 @@ const handleFilterChange = (event) => {
 
   if (!loading) data = (
       <Switch>
-        <Route path="/produtos">
-          <Cadastro atualizaListaDeProdutos={atualizaListaDeProdutos}/>
+        <Route path="/cadastrar_produtos">
+          <Cadastro atualizaListaDeProdutos={atualizaListaDeProdutos} editProduct={editProduct ? {...editProduct} : {}}/>
         </Route>
         <Route path="/">
         <div>
@@ -73,7 +79,7 @@ const handleFilterChange = (event) => {
                />  
         </div>
           <Products>
-            {newListProducts.map(product => <Card product={product} key={product._id}/>)}
+            {newListProducts.map(product => <Card product={product} key={product._id} handleInputEdit={handleInputEdit}/>)}
           </Products>
         </Route>
       </Switch>
