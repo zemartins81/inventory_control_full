@@ -26,6 +26,7 @@ export default function Cadastro({atualizaListaDeProdutos}) {
 
     }catch (e) {
       setAlertVisible(true)
+      setSuccessVisible(false)
     }
 
   }
@@ -39,7 +40,6 @@ export default function Cadastro({atualizaListaDeProdutos}) {
       const name = target.name;
       setNewProduct({...newProduct, [name]: value})
     }
-    console.log(newProduct)
   }
 
   const postProduct = async (newProduct) => {
