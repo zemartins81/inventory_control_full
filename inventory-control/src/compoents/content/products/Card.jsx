@@ -4,12 +4,19 @@ export default function Card({product}) {
 
   const { name, description, amount, unit } = product
 
+  const handleEditClick = (event) => {
+      console.log("Fui clicado " + product._id)
+  }
+
     return (
         <div className="bg-white rounded-xl shadow-md">
             <div className="md:w-9/10 w-full shadow-md">
                 <img src="./img/embreve.jpg" alt="embreve.jpg" className="rounded-lg shadow-lg antialiased p-1"/>
             </div>
             <div className="px-2 m-1 ">
+                <div className="container grid place-items-end">
+                    <img src="./img/edit.png" className="w-6" onClick={handleEditClick}></img>
+                </div>
                 <h1 className="text-2xl text-black font-semibold leading-tight text-center">{name}</h1>
                 <p className="m-1"><b>Descrição:</b> {description}</p>
                 <p className="m-1"><b>Quantidade:</b> {amount} {unit} </p>
