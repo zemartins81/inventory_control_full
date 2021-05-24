@@ -17,7 +17,7 @@ export default function ProductList( ) {
   const [loading, setLoading] = useState(true)
   const [refreshList, setRefreshList] = useState(false)
   const [filterValue, setFilterValue] = useState("")
-  const [editProduct, setEditProduct] = useState([])
+  //const [editProduct, setEditProduct] = useState([])
 
   useEffect(() => {
     const getAllProducts = async() => {
@@ -31,11 +31,11 @@ export default function ProductList( ) {
     }
 
     getAllProducts()
-      .then(r => {
+      .then(() => {
         setLoading(false)
         setRefreshList(false)
       })
-      .catch(error => alert("Não foi possível conectar ao Servidor!"));
+      .catch(() => alert("Não foi possível conectar ao Servidor!"));
 
   }, [refreshList]);
 
@@ -51,10 +51,6 @@ const handleFilterChange = (event) => {
   setFilterValue(event.currentTarget.value)
 }
 
-const handleInputEdit = (editProduct) => {
-  setEditProduct(editProduct)
-  
-}
 
   let data = (
     <div className="flex flex-row items-center justify-center">
@@ -64,8 +60,8 @@ const handleInputEdit = (editProduct) => {
 
   if (!loading) data = (
       <Switch>
-        <Route path="/cadastrar_produtos">
-          <Cadastro atualizaListaDeProdutos={atualizaListaDeProdutos} editProduct={editProduct ? {...editProduct} : {}}/>
+        <Route path={`/produtos/:id`}>
+          <Cadastro atualizaListaDeProdutos={atualizaListaDeProdutos} />
         </Route>
         <Route path="/">
         <div>
@@ -79,7 +75,7 @@ const handleInputEdit = (editProduct) => {
                />  
         </div>
           <Products>
-            {newListProducts.map(product => <Card product={product} key={product._id} handleInputEdit={handleInputEdit}/>)}
+            {newListProducts.map(product => <Card product={product} key={product._id} />)}
           </Products>
         </Route>
       </Switch>

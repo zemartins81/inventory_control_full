@@ -16,7 +16,10 @@ export default function MenuPrincipal(atualizaListaDeProdutos) {
         </Link>
       </div>
       <div>
-        <Link to="/cadastrar_produtos" className=" text-white px-16 py-2 text-xl font-medium hover:text-green-600">
+        <Link to={{
+          pathname: `/produtos/new`,
+          state: {product: {}}
+        }} className=" text-white px-16 py-2 text-xl font-medium hover:text-green-600">
           Cadastrar Produto
         </Link>
       </div>

@@ -1,28 +1,34 @@
 import React, { useState } from "react";
-import {postNewProduct} from "../../../services/apiService";
+import { useLocation } from "react-router";
+import {patchUpdateProduct, postNewProduct} from "../../../services/apiService";
 
 
 
-export default function Cadastro({atualizaListaDeProdutos}) {
+export default function Cadastro(props) {
+
+  const location = useLocation()
 
   const [alertVisible, setAlertVisible] = useState(false)
   const [successVisible, setSuccessVisible] = useState(false)
-  const [editProduct, setEditProduct] = useState({})
-
+  const [editProduct, setEditProduct] = useState(location.state.product)
 
   const handleClick = async (event) => {
     event.preventDefault()
-    
+
     try{
-      
-      const result = await postProduct({...editProduct})
+
+      let result = ""
+
+      editProduct._id
+        ? result = await patchProduct({...editProduct})
+        : result = await postProduct({...editProduct})
 
       if (result.status === 200) {
         document.getElementById("form").reset()
         setEditProduct({})
         setAlertVisible(false)
         setSuccessVisible(true)
-        atualizaListaDeProdutos(true)
+        props.atualizaListaDeProdutos(true)
       }
 
     }catch (e) {
@@ -31,8 +37,6 @@ export default function Cadastro({atualizaListaDeProdutos}) {
     }
 
   }
-
-  
 
   const handleInputChange = (event) => {
     const target = event.currentTarget
@@ -45,8 +49,12 @@ export default function Cadastro({atualizaListaDeProdutos}) {
     }
   }
 
-  const postProduct = async (newProduct) => {
+  const postProduct = async (editProduct) => {
     return await postNewProduct(editProduct);
+  }
+
+  const patchProduct = async (editProduct) => {
+    return await patchUpdateProduct(editProduct)
   }
 
 const Alert = () => (
@@ -75,25 +83,25 @@ const Success = () => (
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
             <label htmlFor="name" className="lg:w-1/2 w-full lg:p-2">Nome: </label>
             <input type="text" name="name" id="name" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
-                   required={true} />
+                   required={true} value={editProduct.name}/>
           </div>
 
           <div className="rounded-xl w-full lg:p-6 text-center my-1">
             <label htmlFor="description" className="lg:w-1/2 w-full lg:p-2">Descrição: </label>
-            <input type="text" name="description" id="name" className="lg:w-1/2 w-full lg:p-2"
-                   onChange={handleInputChange} required={true} />
+            <input type="text" name="description" id="description" className="lg:w-1/2 w-full lg:p-2"
+                   onChange={handleInputChange} required={true} value={editProduct.description}/>
           </div>
 
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
             <label htmlFor="amount" className="lg:w-1/2 w-full lg:p-2">Quantidade: </label>
-            <input type="text" name="amount" id="name" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
-                   required={true} />
+            <input type="text" name="amount" id="amount" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
+                   required={true} value={editProduct.amount}/>
           </div>
 
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
             <label htmlFor="unit" className="lg:w-1/2 w-full lg:p-2">Unidade: </label>
             <select name="unit" id="unit" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
-                    required={true} >
+                    required={true} value={editProduct.unit}>
               <option value="" readOnly={true}>Selecione a unidade</option>
               <option value="cx's">Caixa(s)</option>
               <option value="lt">Litro(s)</option>

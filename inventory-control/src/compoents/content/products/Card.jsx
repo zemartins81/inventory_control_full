@@ -1,13 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-export default function Card({product, handleInputEdit}) {
+export default function Card({product}) {
 
-  const { name, description, amount, unit } = product
-
-  const handleEditClick = () => {
-      handleInputEdit(product)
-  }
+  const { _id, name, description, amount, unit } = product
 
     return (
         <div className="bg-white rounded-xl shadow-md">
@@ -16,7 +12,12 @@ export default function Card({product, handleInputEdit}) {
             </div>
             <div className="px-2 m-1 ">
                 <div className="container grid place-items-end">
-                <Link to="/cadastrar_produtos"><img src="./img/edit.png" alt="edit.png" className="w-6" onClick={handleEditClick}></img></Link>
+                  <Link to={{
+                      pathname: `/produtos/${_id}`,
+                      state: {product: product}
+                    }}>
+                      <img src="./img/edit.png" alt="edit.png" className="w-6"/>
+                  </Link>
                 </div>
                 <h1 className="text-2xl text-black font-semibold leading-tight text-center">{name}</h1>
                 <p className="m-1"><b>Descrição:</b> {description}</p>
