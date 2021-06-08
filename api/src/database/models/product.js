@@ -18,25 +18,33 @@ const productSchema = new database.Schema({
     type: String,
     required: true,
   },
-  vendors: [
+  movements: [
     {
-      name: String,
+      type: String,
+      vendor: String,
       quantity: Number,
-      value: Number,
+      unitValue: Number,
     },
   ],
-  value: Number,
+  amount: Number,
+});
+
+productSchema.pre('save', function () {
+  if (!this.movements.length) {
+    this.movements = [];
+    this.amount = 0;
+  }
 });
 
 productSchema.pre('findByIdAndUpdate', function () {
-  if (this.vendors.length) {
-    this.vendors.forEach((vendor) => {
+  if (this.movements.length) {
+    this.movements.forEach((vendor) => {
       this.quantity += vendor.quantity;
-      this.value += vendor.value;
+      this.amount += vendor.amount;
     });
   } else {
     this.quantity = 0;
-    this.value = 0;
+    this.amount = 0;
   }
 });
 

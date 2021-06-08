@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import Products from '../compoents/content/products/Products'
 import {getProductList} from '../services/apiService'
 import Loading from "../compoents/content/Loading";
@@ -10,6 +10,7 @@ import {
 import Cadastro from "../compoents/content/cadastro/Cadastro";
 import MenuPrincipal from "../compoents/content/menuPrincipal/MenuPrincipal";
 import Card from '../compoents/content/products/Card'
+import Modal from '../compoents/content/Modal/Modal'
 
 export default function ProductList( ) {
 
@@ -17,7 +18,17 @@ export default function ProductList( ) {
   const [loading, setLoading] = useState(true)
   const [refreshList, setRefreshList] = useState(false)
   const [filterValue, setFilterValue] = useState("")
-  //const [editProduct, setEditProduct] = useState([])
+  const [showModal, setShowModal] = useState(false)
+    const [productModal, setProductModal] = useState({})
+
+    const handleShowModal = (product) => {
+      setProductModal(product)
+      setShowModal(!showModal)
+    }
+
+    const handleCloseModal = () => {
+      setShowModal(!showModal)
+    }
 
   useEffect(() => {
     const getAllProducts = async() => {
@@ -59,6 +70,8 @@ const handleFilterChange = (event) => {
   )
 
   if (!loading) data = (
+      <div>
+          {showModal && <Modal productModal={productModal} atualizaListaDeProdutos={atualizaListaDeProdutos} type="entry" onCancel={handleCloseModal} />}
       <Switch>
         <Route path={`/produtos/:id`}>
           <Cadastro atualizaListaDeProdutos={atualizaListaDeProdutos} />
@@ -75,19 +88,17 @@ const handleFilterChange = (event) => {
                />  
         </div>
           <Products>
-            {newListProducts.map(product => <Card product={product} key={product._id} />)}
+            {newListProducts.map(product => <Card product={product} key={product._id} handleShowModal={handleShowModal} />)}
           </Products>
         </Route>
       </Switch>
+      </div>
   )
-
-
   return (
         <Router>
           <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <MenuPrincipal />
           </div>
-
           <div className="container  max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             {data}
           </div>

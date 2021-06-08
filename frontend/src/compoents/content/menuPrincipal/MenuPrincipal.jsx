@@ -3,8 +3,6 @@ import {Link} from "react-router-dom";
 
 export default function MenuPrincipal(atualizaListaDeProdutos) {
 
-  
-
   return (
   <div className="container bg-green-400 p-4 my-4 rounded-xl flex-grow shadow-md">
     <h1 className="text-center font-semibold text-4xl text-white mb-8">Controle de Estoque</h1>

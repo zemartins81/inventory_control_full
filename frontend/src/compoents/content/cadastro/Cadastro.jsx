@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router";
 import {patchUpdateProduct, postNewProduct} from "../../../services/apiService";
+import properties from "../Components/Button/properties.json";
+import Button from "../Components/Button/Button";
+
 
 
 
@@ -66,7 +69,7 @@ const Alert = () => (
 
 const Success = () => (
     <div className=" container bg-green-200 relative text-center text-green-500 py-3 px-3 rounded-lg">
-    <p>Produto cadastrado com sucesso!</p>
+    <p>Produto cadastrado com successo!</p>
   </div>
 )
 
@@ -124,7 +127,7 @@ const Success = () => (
                 </svg>
                 <div className="flex text-sm text-gray-600">
                   <label htmlFor="file-upload"
-                         className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                         className="relative cursor-pointer bg-white rounded-md font-medium text-green-400 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                     <span>Upload a file</span>
                     <input id="file-upload" name="file-upload" type="file" className="sr-only"/>
                   </label>
@@ -137,11 +140,8 @@ const Success = () => (
             </div>
           </div>
 
-          <div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-            <button type="submit" onClick={handleClick}
-                    className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              Save
-            </button>
+          <div className="px-4 py-3 text-right sm:px-6">
+            <Button onClick={handleClick} properties={properties.success} text="Salvar" />
           </div>
 
         </form>
