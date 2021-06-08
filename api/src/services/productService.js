@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/extensions
-import productData from "../data/productData.js";
+import productData from '../data/productData.js';
 // eslint-disable-next-line import/extensions
-import errorControl from "../helpers/errorControl.js";
+import errorControl from '../helpers/errorControl.js';
 
 const productService = {
   getProducts: async () => {

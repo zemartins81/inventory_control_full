@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/extensions
-import database from "../database.js";
+import database from '../database.js';
 
 const productSchema = new database.Schema({
   name: {
@@ -10,19 +10,36 @@ const productSchema = new database.Schema({
     type: String,
     required: true,
   },
-  amount: {
-    type: String,
+  quantity: {
+    type: Number,
     required: true,
   },
   unit: {
     type: String,
     required: true,
   },
-  operations: {
-    type: Array,
-  },
+  vendors: [
+    {
+      name: String,
+      quantity: Number,
+      value: Number,
+    },
+  ],
+  value: Number,
 });
 
-const Product = database.model("Product", productSchema);
+productSchema.pre('findByIdAndUpdate', function () {
+  if (this.vendors.length) {
+    this.vendors.forEach((vendor) => {
+      this.quantity += vendor.quantity;
+      this.value += vendor.value;
+    });
+  } else {
+    this.quantity = 0;
+    this.value = 0;
+  }
+});
+
+const Product = database.model('Product', productSchema);
 
 export default Product;

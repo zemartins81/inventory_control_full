@@ -1,13 +1,13 @@
-import http from "http";
-import dotenv from "dotenv";
-import path from "path";
+import http from 'http';
+import dotenv from 'dotenv';
+import path from 'path';
 // eslint-disable-next-line import/extensions
-import app from "./src/app.js";
+import app from './src/app.js';
 
-const {resolve, join} = path;
+const { resolve, join } = path;
 
 dotenv.config({
-  path: join(resolve(), "./src/config/", ".env"),
+  path: join(resolve(), './src/config/', '.env'),
 });
 
 const PORT = process.env.PORT || 8080;

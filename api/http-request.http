@@ -41,7 +41,7 @@ Content-Type: application/json
 {
   "name": "Etiquetas 6288",
   "description": "impressora",
-  "amount": 5,
+  "quantity": 5,
   "unit": "un"
 }
 
@@ -53,7 +53,7 @@ Content-Type: application/json
 
 {
   "description": "Tonner para impressora",
-  "amount": 5,
+  "quantity": 5,
   "unit": "un"
 }
 
@@ -74,7 +74,7 @@ Content-Type: application/json
 
 {
   "description": "Tonner para a impressora do zé",
-  "amount": "5"
+  "quantity": "5"
 }
 
 ###
@@ -87,7 +87,7 @@ Content-Type: application/json
 {
   "name": "Papel pacú",
   "description": "Para limpar o pé",
-  "amount": "5"
+  "quantity": "5"
 }
 
 ###

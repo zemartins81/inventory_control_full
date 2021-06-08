@@ -93,9 +93,9 @@ const Success = () => (
           </div>
 
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
-            <label htmlFor="amount" className="lg:w-1/2 w-full lg:p-2">Quantidade: </label>
-            <input type="text" name="amount" id="amount" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
-                   required={true} value={editProduct.amount}/>
+            <label htmlFor="quantity" className="lg:w-1/2 w-full lg:p-2">Quantidade: </label>
+            <input type="text" name="quantity" id="quantity" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
+                   required={true} value={editProduct.quantity}/>
           </div>
 
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
