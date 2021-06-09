@@ -69,7 +69,7 @@ Content-Type: application/json
 ###
 
 //Atualiza os dados de um produto
-PATCH http://172.22.52.221:3000/products?id=608c0d986428c001e945e984
+PATCH http://172.22.52.221:3000/products?id=60bfe8927c413658596ff10d
 Content-Type: application/json
 
 {

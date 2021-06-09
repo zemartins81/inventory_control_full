@@ -21,11 +21,11 @@ export default function ProductList( ) {
   const [showModal, setShowModal] = useState(false)
     const [productModal, setProductModal] = useState({})
 
-    const handleShowModal = (product) => {
-      setProductModal(product)
+    function handleShowModal (product) {
+      setProductModal({...product})
       setShowModal(!showModal)
     }
-
+  
     const handleCloseModal = () => {
       setShowModal(!showModal)
     }
@@ -69,9 +69,11 @@ const handleFilterChange = (event) => {
     </div>
   )
 
-  if (!loading) data = (
+    if(showModal) data = ( <Modal product={productModal} atualizaListaDeProdutos={atualizaListaDeProdutos} type="entry" onCancel={handleCloseModal} />)
+
+  if (!loading && !showModal) data = (
       <div>
-          {showModal && <Modal productModal={productModal} atualizaListaDeProdutos={atualizaListaDeProdutos} type="entry" onCancel={handleCloseModal} />}
+          
       <Switch>
         <Route path={`/produtos/:id`}>
           <Cadastro atualizaListaDeProdutos={atualizaListaDeProdutos} />
@@ -88,7 +90,7 @@ const handleFilterChange = (event) => {
                />  
         </div>
           <Products>
-            {newListProducts.map(product => <Card product={product} key={product._id} handleShowModal={handleShowModal} />)}
+            {newListProducts.map(product => <Card product={product} key={product._id} handleShowModal={(product) => handleShowModal(product)} />)}
           </Products>
         </Route>
       </Switch>

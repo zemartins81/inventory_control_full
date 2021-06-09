@@ -22,12 +22,14 @@ const productData = {
       message: error.message,
     })),
 
-  updateProduct: async (_id, values) =>
-    await Product.findByIdAndUpdate(
-      _id,
-      { $set: { ...values } },
-      { new: true }
-    ),
+  updateProduct: async (_id, values) => {
+
+    return Product.findByIdAndUpdate(
+     _id,
+        {$set: {...values}},
+        {new: true}
+    )
+  },
 
   deleteProduct: async (id) => Product.findByIdAndDelete(id),
 };

@@ -2,10 +2,13 @@ import React, {useEffect, useState} from 'react';
 import properties from "../Components/Button/properties.json";
 import Button from "../Components/Button/Button";
 import {patchUpdateProduct} from "../../../services/apiService";
+import { useLocation } from "react-router";
 
-export default function Modal({ productModal, onCancel, atualizaListaDeProdutos, type }) {
+export default function Modal({product, onCancel, atualizaListaDeProdutos, type }) {
+
 
     const [movement, setmovement] = useState({type})
+
 
         useEffect(() => {});
 
@@ -16,12 +19,18 @@ export default function Modal({ productModal, onCancel, atualizaListaDeProdutos,
             const name = target.name;
             setmovement({...movement, [name]: value})
         }
+
     }
 
-    const patchProduct = async (productModal) => {
-        console.log({...productModal})
-        productModal.movements.add(movement)
-        const result = await patchUpdateProduct({...productModal})
+    const patchProduct = async (product) => {
+        product.movements.push(movement);
+
+        product.quantity += Number(product.movements[product.movements.length -1].quantity)
+        product.amount += (Number(product.movements[product.movements.length -1].quantity) * Number(product.movements[product.movements.length -1].unitValue));
+
+        console.log(product)
+
+        const result = await patchUpdateProduct({...product})
         if (result.status === 200) {
             atualizaListaDeProdutos(true)
         }
@@ -40,7 +49,7 @@ export default function Modal({ productModal, onCancel, atualizaListaDeProdutos,
                         <div className="rounded-xl w-full lg:p-6  text-center my-1">
                             <label htmlFor="name" className="lg:w-1/2 w-full lg:p-2">Nome: </label>
                             <input type="text" name="name" id="name" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
-                                   disabled={true} value={productModal.name}/>
+                                   disabled={true} value={product.name}/>
                         </div>
 
                         <div className="rounded-xl w-full lg:p-6  text-center my-1">
@@ -66,7 +75,7 @@ export default function Modal({ productModal, onCancel, atualizaListaDeProdutos,
                 </div>
                 <div className="grid lg:grid-cols-2  place-items-center md:grid-cols-1 sm:grid-cols-1 p-4">
                     <Button onClick={onCancel} properties={properties.cancel} text="Cancelar" />
-                    <Button onClick={patchProduct} properties={properties.success} text="Salvar" />
+                    <Button onClick={() => patchProduct(product)} properties={properties.success} text="Salvar" />
                 </div>
             </div>
         </div>
