@@ -20,20 +20,19 @@ const productSchema = new database.Schema({
   },
   movements: [
     {
-      type: String,
+      transactionType: String,
       vendor: String,
-      quantity: Number,
-      unitValue: Number,
+      quantity: String,
+      unitValue: String,
+      date: Date,
     },
   ],
-  amount: Number,
+  amount: String,
 });
 
 productSchema.pre('save', function () {
-    this.movements = [];
-    this.amount = 0;
+  this.amount = 0;
 });
-
 
 const Product = database.model('Product', productSchema);
 

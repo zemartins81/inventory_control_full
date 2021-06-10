@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React  from 'react'
 import {Link} from 'react-router-dom'
 import properties from "../Components/Button/properties.json"
-import Button from "../Components/Button/Button";
+import Button from "../Components/Button/Button"
 
 export default function Card({product, handleShowModal}) {
 
@@ -27,9 +27,9 @@ export default function Card({product, handleShowModal}) {
                 <p className="m-1"><b>Quantidade:</b> {quantity} {unit} </p>
             </div>
             <div className="grid lg:grid-cols-2  place-items-center md:grid-cols-1 sm:grid-cols-1 p-4">
-                <Button onClick={ () => handleShowModal(product)} properties={properties.success} text="Entrada" />
+                <Button onClick={ () => handleShowModal(product, "incoming")} properties={properties.success} text="Entrada" />
 
-                <Button onClick={() => {}} properties={properties.warning} text="Saída"/>
+                <Button onClick={ () => handleShowModal(product, "outgoing")} properties={properties.warning} text="Saída"/>
             </div>
         </div>
     )

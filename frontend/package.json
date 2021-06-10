@@ -43,6 +43,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^9",
-    "postcss": "^8.2.15"
+    "postcss": "^8.3.1"
   }
 }

@@ -24,10 +24,14 @@ const productData = {
 
   updateProduct: async (_id, values) => {
 
-    return Product.findByIdAndUpdate(
-     _id,
+   return Product.findByIdAndUpdate(
+        _id,
         {$set: {...values}},
-        {new: true}
+       {new: true},
+       function (err, doc) {
+          if(err) console.log(`Erro: ${err}`)
+         console.log(doc)
+       }
     )
   },
 

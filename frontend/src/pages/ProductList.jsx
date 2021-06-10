@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import Products from '../compoents/content/products/Products'
 import {getProductList} from '../services/apiService'
 import Loading from "../compoents/content/Loading";
@@ -20,9 +20,12 @@ export default function ProductList( ) {
   const [filterValue, setFilterValue] = useState("")
   const [showModal, setShowModal] = useState(false)
     const [productModal, setProductModal] = useState({})
+    const [transactionType, setTransactionType] = useState("")
 
-    function handleShowModal (product) {
+    function handleShowModal (product, transaction) {
+      console.log(product, transaction)
       setProductModal({...product})
+      setTransactionType(transaction)
       setShowModal(!showModal)
     }
   
@@ -69,7 +72,7 @@ const handleFilterChange = (event) => {
     </div>
   )
 
-    if(showModal) data = ( <Modal product={productModal} atualizaListaDeProdutos={atualizaListaDeProdutos} type="entry" onCancel={handleCloseModal} />)
+    if(showModal) data = ( <Modal product={productModal} atualizaListaDeProdutos={atualizaListaDeProdutos} transactionType={transactionType} onCancel={handleCloseModal} />)
 
   if (!loading && !showModal) data = (
       <div>
@@ -90,7 +93,7 @@ const handleFilterChange = (event) => {
                />  
         </div>
           <Products>
-            {newListProducts.map(product => <Card product={product} key={product._id} handleShowModal={(product) => handleShowModal(product)} />)}
+            {newListProducts.map(product => <Card product={product} key={product._id} handleShowModal={(product) => handleShowModal(product, transactionType)} />)}
           </Products>
         </Route>
       </Switch>

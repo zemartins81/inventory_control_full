@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router";
+import React, { useState} from "react";
+import { useLocation, Redirect } from "react-router";
 import {patchUpdateProduct, postNewProduct} from "../../../services/apiService";
 import properties from "../Components/Button/properties.json";
 import Button from "../Components/Button/Button";
@@ -14,6 +14,7 @@ export default function Cadastro(props) {
   const [alertVisible, setAlertVisible] = useState(false)
   const [successVisible, setSuccessVisible] = useState(false)
   const [editProduct, setEditProduct] = useState(location.state.product)
+  const [redirect, setRedirect] = useState(false)
 
   const handleClick = async (event) => {
     event.preventDefault()
@@ -27,11 +28,12 @@ export default function Cadastro(props) {
         : result = await postProduct({...editProduct})
 
       if (result.status === 200) {
-        document.getElementById("form").reset()
-        setEditProduct({})
+
         setAlertVisible(false)
         setSuccessVisible(true)
         props.atualizaListaDeProdutos(true)
+        setRedirect(true)
+
       }
 
     }catch (e) {
@@ -40,6 +42,7 @@ export default function Cadastro(props) {
     }
 
   }
+
 
   const handleInputChange = (event) => {
     const target = event.currentTarget
@@ -76,6 +79,7 @@ const Success = () => (
 
   return (
     <>
+      {redirect? <Redirect to="/" />: null}
       {alertVisible? <Alert/> : null}
       {successVisible? <Success /> : null}
       <div className="container bg-gray-200 p-2 my-4 rounded-xl flex-grow">
