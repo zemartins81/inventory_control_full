@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useEffect} from "react";
 import { useLocation, Redirect } from "react-router";
 import {patchUpdateProduct, postNewProduct} from "../../../services/apiService";
 import properties from "../Components/Button/properties.json";
@@ -15,6 +15,11 @@ export default function Cadastro(props) {
   const [successVisible, setSuccessVisible] = useState(false)
   const [editProduct, setEditProduct] = useState(location.state.product)
   const [redirect, setRedirect] = useState(false)
+  const [name, setName] = useState("")
+  const [description, setDescription] = useState("")
+  const [quantity, setQuantity] = useState(0)
+  const [unit, setUnit] = useState("")
+
 
   const handleClick = async (event) => {
     event.preventDefault()
@@ -43,8 +48,17 @@ export default function Cadastro(props) {
 
   }
 
+  useEffect(() => {
+    setName(editProduct.name)
+    setDescription(editProduct.description)
+    setQuantity(editProduct.quantity)
+    setUnit(editProduct.unit)
+  }, [editProduct])
+
+
 
   const handleInputChange = (event) => {
+
     const target = event.currentTarget
     setAlertVisible(false)
     setSuccessVisible(false)
@@ -90,25 +104,25 @@ const Success = () => (
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
             <label htmlFor="name" className="lg:w-1/2 w-full lg:p-2">Nome: </label>
             <input type="text" name="name" id="name" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
-                   required={true} value={editProduct.name}/>
+                   required={true} value={name}/>
           </div>
 
           <div className="rounded-xl w-full lg:p-6 text-center my-1">
             <label htmlFor="description" className="lg:w-1/2 w-full lg:p-2">Descrição: </label>
             <input type="text" name="description" id="description" className="lg:w-1/2 w-full lg:p-2"
-                   onChange={handleInputChange} required={true} value={editProduct.description}/>
+                   onChange={handleInputChange} required={true} value={description}/>
           </div>
 
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
             <label htmlFor="quantity" className="lg:w-1/2 w-full lg:p-2">Quantidade: </label>
             <input type="text" name="quantity" id="quantity" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
-                   required={true} value={editProduct.quantity}/>
+                   required={true} value={quantity}/>
           </div>
 
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
             <label htmlFor="unit" className="lg:w-1/2 w-full lg:p-2">Unidade: </label>
             <select name="unit" id="unit" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
-                    required={true} value={editProduct.unit}>
+                    required={true} value={unit}>
               <option value="" readOnly={true}>Selecione a unidade</option>
               <option value="cx's">Caixa(s)</option>
               <option value="lt">Litro(s)</option>

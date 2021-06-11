@@ -26,10 +26,8 @@ export default function Card({product, handleShowModal}) {
                 <p className="m-1"><b>Descrição:</b> {description}</p>
                 <p className="m-1"><b>Quantidade:</b> {quantity} {unit} </p>
             </div>
-            <div className="grid lg:grid-cols-2  place-items-center md:grid-cols-1 sm:grid-cols-1 p-4">
-                <Button onClick={ () => handleShowModal(product, "incoming")} properties={properties.success} text="Entrada" />
-
-                <Button onClick={ () => handleShowModal(product, "outgoing")} properties={properties.warning} text="Saída"/>
+            <div className="place-items-center grid lg:grid-cols-0 md:grid-cols-0 sm:grid-cols-0 p-4">
+                <Button onClick={ () => handleShowModal(product)} properties={properties.success} text="Lançar Transação" />
             </div>
         </div>
     )

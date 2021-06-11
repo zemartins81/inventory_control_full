@@ -19,13 +19,10 @@ export default function ProductList( ) {
   const [refreshList, setRefreshList] = useState(false)
   const [filterValue, setFilterValue] = useState("")
   const [showModal, setShowModal] = useState(false)
-    const [productModal, setProductModal] = useState({})
-    const [transactionType, setTransactionType] = useState("")
+  const [productModal, setProductModal] = useState({})
 
-    function handleShowModal (product, transaction) {
-      console.log(product, transaction)
+    function handleShowModal (product) {
       setProductModal({...product})
-      setTransactionType(transaction)
       setShowModal(!showModal)
     }
   
@@ -72,7 +69,7 @@ const handleFilterChange = (event) => {
     </div>
   )
 
-    if(showModal) data = ( <Modal product={productModal} atualizaListaDeProdutos={atualizaListaDeProdutos} transactionType={transactionType} onCancel={handleCloseModal} />)
+    if(showModal) data = ( <Modal product={productModal} atualizaListaDeProdutos={atualizaListaDeProdutos} onCancel={handleCloseModal} />)
 
   if (!loading && !showModal) data = (
       <div>
@@ -93,7 +90,7 @@ const handleFilterChange = (event) => {
                />  
         </div>
           <Products>
-            {newListProducts.map(product => <Card product={product} key={product._id} handleShowModal={(product) => handleShowModal(product, transactionType)} />)}
+            {newListProducts.map(product => <Card product={product} key={product._id} handleShowModal={(product) => handleShowModal(product)} />)}
           </Products>
         </Route>
       </Switch>
