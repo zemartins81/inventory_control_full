@@ -18,6 +18,10 @@ const productSchema = new database.Schema({
     type: String,
     required: true,
   },
+  unityValue: {
+    type: String,
+    required: true,
+  },
   movements: [
     {
       transactionType: String,

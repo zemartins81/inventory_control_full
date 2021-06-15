@@ -19,6 +19,8 @@ export default function Cadastro(props) {
   const [description, setDescription] = useState("")
   const [quantity, setQuantity] = useState(0)
   const [unit, setUnit] = useState("")
+  const [amount, setAmount] = useState("")
+  const [unityValue, setUnityValue] = useState("")
 
 
   const handleClick = async (event) => {
@@ -53,6 +55,8 @@ export default function Cadastro(props) {
     setDescription(editProduct.description)
     setQuantity(editProduct.quantity)
     setUnit(editProduct.unit)
+    setUnityValue(editProduct.unityValue)
+    setAmount(editProduct.amount)
   }, [editProduct])
 
 
@@ -77,18 +81,50 @@ export default function Cadastro(props) {
     return await patchUpdateProduct(editProduct)
   }
 
-const Alert = () => (
+  const calculaTotal = (value) => {    
+    const amount = value * quantity
+    setUnityValue(value)
+    formatValues(amount)
+    setAmount(amount)
+    insertAmount(amount)
+    console.log(amount)
+  }
+
+  const formatValues = (value) => {
+        console.log(typeof(value))
+        let valor = value
+        valor = valor + '';
+        valor = parseInt(valor.replace(/[\D]+/g, ''));
+        valor = valor + '';
+        valor = valor.replace(/([0-9]{2})$/g, ",$1");
+
+        if (valor.length > 6) {
+            valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+        }
+
+        if(valor === 'NaN') setAmount('');
+
+        return valor
+  }
+
+  const insertAmount = (amount) => {
+    setEditProduct({...editProduct, amount})
+  }
+
+
+
+  const Alert = () => (
       <div className=" container bg-red-200 relative text-center text-red-500 py-3 px-3 rounded-lg">
         <p>Não foi possível Salvar o Produto!</p>
           <p>Verifique se todos os campos estão preenchidos e tente novamente!</p>
       </div>
-)
+  )
 
-const Success = () => (
+  const Success = () => (
     <div className=" container bg-green-200 relative text-center text-green-500 py-3 px-3 rounded-lg">
-    <p>Produto cadastrado com successo!</p>
-  </div>
-)
+      <p>Produto cadastrado com successo!</p>
+    </div>
+  )
 
 
   return (
@@ -118,6 +154,16 @@ const Success = () => (
             <input type="text" name="quantity" id="quantity" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
                    required={true} value={quantity}/>
           </div>
+          <div className="rounded-xl w-full lg:p-6  text-center my-1">
+            <label htmlFor="unityValue" className="lg:w-1/2 w-full lg:p-2">Preço unitário: </label>
+            <input type="text" name="unityValue" id="amount" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
+                   required={true} value={unityValue}/>
+          </div>
+          <div className="rounded-xl w-full lg:p-6  text-center my-1">
+            <label htmlFor="amount" className="lg:w-1/2 w-full lg:p-2">Valor: </label>
+            <input type="text" name="amount" id="amount" className="lg:w-1/2 w-full lg:p-2"
+              required={true} value={amount} disabled/>
+          </div>
 
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
             <label htmlFor="unit" className="lg:w-1/2 w-full lg:p-2">Unidade: </label>
@@ -125,10 +171,11 @@ const Success = () => (
                     required={true} value={unit}>
               <option value="" readOnly={true}>Selecione a unidade</option>
               <option value="cx's">Caixa(s)</option>
+              <option value="fl's">Folha(s)</option>
               <option value="lt">Litro(s)</option>
               <option value="resmas">Resma(s)</option>
               <option value="un">Unidade(s)</option>
-            </select>
+            </select> 
           </div>
 
           <div>

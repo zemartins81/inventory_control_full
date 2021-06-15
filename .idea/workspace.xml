@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="84972d11-709e-4a28-9fb9-9b7e3f5939e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/compoents/content/Modal/Modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/yarn.lock" afterDir="false" />
+    <list default="true" id="d0a083d3-2b2e-463f-9bee-f2e434bdc9f1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inventory_control.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/api.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/jsLinters/eslint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/prettier.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/database/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/database/models/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/cadastro/Cadastro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/compoents/content/cadastro/Cadastro.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/products/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/compoents/content/products/Card.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1toheGuuuVl4ghXHF5UoHAgbPLx" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1txsCYQhFm3HB56xEReFB6vM2xu" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -24,23 +38,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../udemy_cod3r_react/hooks" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="84972d11-709e-4a28-9fb9-9b7e3f5939e0" name="Default Changelist" comment="" />
-      <created>1623441456158</created>
+      <changelist id="d0a083d3-2b2e-463f-9bee-f2e434bdc9f1" name="Default Changelist" comment="" />
+      <created>1623721961221</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1623441456158</updated>
-      <workItem from="1623441463551" duration="24000" />
+      <updated>1623721961221</updated>
+      <workItem from="1623721965741" duration="32000" />
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
 </project>
