@@ -1,25 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d0a083d3-2b2e-463f-9bee-f2e434bdc9f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inventory_control.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.idea/api.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.idea/jsLinters/eslint.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.idea/prettier.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.idea/vcs.xml" beforeDir="false" />
+    <list default="true" id="28bcf615-621c-448d-913c-8b4e82e5475d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/database/models/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/database/models/product.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/cadastro/Cadastro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/compoents/content/cadastro/Cadastro.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/products/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/compoents/content/products/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/menuPrincipal/MenuPrincipal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/compoents/content/menuPrincipal/MenuPrincipal.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +15,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1txsCYQhFm3HB56xEReFB6vM2xu" />
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="620375e7-08a2-4e8f-8108-6073377c220f" />
+        <option name="url" value="https://github.com/jcmartins81/inventory_control.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
+  </component>
+  <component name="ProjectId" id="1u0Hlmhl1oIVbhwhEl4uJlv04Jo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,18 +36,60 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../udemy_cod3r_react/hooks" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Udemy/Cod3r_React/hooks" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="application.passwordSafe" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="ReaderModeSettings">
+    <option name="showLigatures" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="ChromiumRemoteDebugType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Cadastro.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/frontend/src/compoents/content/cadastro/Cadastro.jsx" working-dir="$PROJECT_DIR$/frontend/src/compoents/content/cadastro">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.Cadastro.jsx" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d0a083d3-2b2e-463f-9bee-f2e434bdc9f1" name="Default Changelist" comment="" />
-      <created>1623721961221</created>
+      <changelist id="28bcf615-621c-448d-913c-8b4e82e5475d" name="Default Changelist" comment="" />
+      <created>1623795748052</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1623721961221</updated>
-      <workItem from="1623721965741" duration="32000" />
+      <updated>1623795748052</updated>
+      <workItem from="1623795751305" duration="716000" />
+      <workItem from="1623796496023" duration="334000" />
+      <workItem from="1623796861355" duration="691000" />
+      <workItem from="1623797590282" duration="461000" />
+      <workItem from="1623798085067" duration="35000" />
+      <workItem from="1623798314253" duration="1330000" />
+      <workItem from="1623799758721" duration="142000" />
+      <workItem from="1623800322763" duration="60000" />
+      <workItem from="1623853614739" duration="7672000" />
+      <workItem from="1623879036087" duration="212000" />
+      <workItem from="1623937094905" duration="2363000" />
+      <workItem from="1623981529073" duration="19000" />
+      <workItem from="1624017887788" duration="11263000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>

@@ -19,15 +19,15 @@ const productSchema = new database.Schema({
     required: true,
   },
   unityValue: {
-    type: String,
+    type: Number,
     required: true,
   },
   movements: [
     {
       transactionType: String,
       vendor: String,
-      quantity: String,
-      unitValue: String,
+      quantity: Number,
+      unityValue: Number,
       date: Date,
     },
   ],
