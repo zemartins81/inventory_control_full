@@ -7,8 +7,6 @@ export default function Card({product, handleShowModal}) {
 
     const { _id, name, description, quantity, unit, amount } = product
 
-    const amountFormated = amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
     return (
 
         <div className="bg-white rounded-xl shadow-md">
@@ -27,7 +25,7 @@ export default function Card({product, handleShowModal}) {
                 <h1 className="text-2xl text-black font-semibold leading-tight text-center">{name}</h1>
                 <p className="m-1"><b>Descrição: </b>{description}</p>
                 <p className="m-1"><b>Quantidade: </b>{quantity} {unit} </p>
-                <p className="m-1"><b>Valor: </b>R$ {amountFormated}</p>
+                <p className="m-1"><b>Valor: </b>R$ {amount}</p>
             </div>
             <div className="place-items-center grid lg:grid-cols-0 md:grid-cols-0 sm:grid-cols-0 p-4">
                 <Button onClick={ () => handleShowModal(product)} properties={properties.success} text="Lançar Transação" />

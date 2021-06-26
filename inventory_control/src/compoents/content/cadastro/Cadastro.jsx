@@ -52,8 +52,16 @@ export default function Cadastro(props) {
     setQuantity(editProduct.quantity)
     setUnit(editProduct.unit)
     setUnityValue(editProduct.unityValue)
-    setAmount(editProduct.amount)
   }, [editProduct])
+
+  useEffect(() => {
+    setEditProduct({...editProduct, amount})
+  }, [amount])
+
+  useEffect(() => {
+    const newAmount = Number(quantity) * (unityValue)
+    setAmount(newAmount);
+  }, [quantity, unityValue])
 
   const handleInputChange = (event) => {
 
@@ -66,12 +74,23 @@ export default function Cadastro(props) {
       const name = target.name;
 
       setEditProduct({...editProduct, [name]: value})
-
-      if(name === 'unityValue') {
-        const newAmount = (Number(value) * Number(quantity))
-        setEditProduct({...editProduct, amount: newAmount})
-      }
     }
+  }
+
+  const formatValues = (value) => {
+    let valor = value
+    valor = valor + '';
+    valor = parseInt(valor.replace(/[\D]+/g, ''));
+    valor = valor + '';
+    valor = valor.replace(/([0-9]{2})$/g, ",$1");
+
+    if (valor.length > 6) {
+      valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+    }
+
+    if(valor === 'NaN') setAmount(0);
+
+    return valor
   }
 
   const postProduct = async (editProduct) => {
@@ -81,23 +100,6 @@ export default function Cadastro(props) {
   const patchProduct = async (editProduct) => {
     return await patchUpdateProduct(editProduct)
   }
-
-  const formatValues = (value) => {
-        let valor = value
-        valor = valor + '';
-        valor = parseInt(valor.replace(/[\D]+/g, ''));
-        valor = valor + '';
-        valor = valor.replace(/([0-9]{2})$/g, ",$1");
-
-        if (valor.length > 6) {
-            valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
-        }
-
-        if(valor === 'NaN') setAmount(0);
-
-        return valor
-  }
-
 
   const Alert = () => (
       <div className=" container bg-red-200 relative text-center text-red-500 py-3 px-3 rounded-lg">
@@ -137,19 +139,19 @@ export default function Cadastro(props) {
 
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
             <label htmlFor="quantity" className="lg:w-1/2 w-full lg:p-2">Quantidade: </label>
-            <input type="text" name="quantity" id="quantity" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
+            <input type="number" name="quantity" id="quantity" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
                    required={true} value={quantity}/>
           </div>
 
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
             <label htmlFor="unityValue" className="lg:w-1/2 w-full lg:p-2">Preço unitário: </label>
-            <input type="text" name="unityValue" id="unityValue" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
+            <input type="number" name="unityValue" id="unityValue" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
                    required={true} value={unityValue}/>
           </div>
 
           <div className="rounded-xl w-full lg:p-6  text-center my-1">
             <label htmlFor="amount" className="lg:w-1/2 w-full lg:p-2">Valor: </label>
-            <input type="text" name="amount" id="amount" className="lg:w-1/2 w-full lg:p-2" onChange={handleInputChange}
+            <input type="number" name="amount" id="amount" className="lg:w-1/2 w-full lg:p-2"
               required={true} value={amount} disabled/>
           </div>
 
