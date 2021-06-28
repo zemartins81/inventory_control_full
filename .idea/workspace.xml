@@ -1,68 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1b65ef9-b335-4942-8627-cd8e0c625dee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/.idea/frontend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/craco.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/public/img/edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/public/img/edit.png:Zone.Identifier" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/public/img/embreve.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/Components/Button/Button.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/Components/Button/properties.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/Loading.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/Modal/Modal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/cadastro/Cadastro.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/menuPrincipal/MenuPrincipal.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/products/Card.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/products/Products.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/pages/ProductList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/services/apiService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/src/services/httpService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/tailwind.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory_control/yarn.lock" afterDir="false" />
+    <list default="true" id="f1b65ef9-b335-4942-8627-cd8e0c625dee" name="Default Changelist" comment="Input Cadastro update unityValue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/craco.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/img/edit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/img/edit.png:Zone.Identifier" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/img/embreve.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/Components/Button/Button.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/Components/Button/properties.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/Loading.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/Modal/Modal.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/cadastro/Cadastro.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/menuPrincipal/MenuPrincipal.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/products/Card.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/compoents/content/products/Products.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProductList.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/apiService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/services/httpService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tailwind.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/Modal/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/cadastro/Cadastro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/cadastro/Cadastro.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/products/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/products/Card.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +40,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1624730158412</updated>
-      <workItem from="1624730163985" duration="7154000" />
+      <workItem from="1624730163985" duration="7691000" />
+      <workItem from="1624877793626" duration="882000" />
+      <workItem from="1624898490670" duration="2929000" />
     </task>
     <servers />
   </component>
@@ -114,5 +59,10 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Input Cadastro update unityValue" />
+    <option name="LAST_COMMIT_MESSAGE" value="Input Cadastro update unityValue" />
   </component>
 </project>

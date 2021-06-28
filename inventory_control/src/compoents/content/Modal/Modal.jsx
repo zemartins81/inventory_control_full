@@ -8,10 +8,10 @@ export default function Modal({
   product, onCancel, atualizaListaDeProdutos, 
 }) {
   const [movement, setmovement] = useState({});
-  const [transactionType, setTransactionType] = useState(" ")
+  const [transactionType, setTransactionType] = useState("")
   const [vendor, setVendor] = useState(" ")
   const [quantity, setQuantity] = useState(" ")
-  const [unitValue, setUnitValue] = useState(" ")
+  //const [unitValue, setUnitValue] = useState(" ")
 
 
 
@@ -28,7 +28,7 @@ export default function Modal({
     setTransactionType(movement.transactionType)
     setVendor(movement.vendor)
     setQuantity(movement.quantity)
-    setUnitValue(movement.unitValue)
+    //setUnitValue(movement.unitValue)
   }, [movement])
 
    const patchProduct = async (product) => {
@@ -36,12 +36,17 @@ export default function Modal({
 
     if (!transactionType.localeCompare('incoming')) {
       product.quantity += Number(movement.quantity);
-      product.amount = Number(product.amount)
-      + (Number(movement.quantity) * Number(movement.unitValue));
+      product.amount = Number(product.unityValue) * product.quantity
+      //+ (Number(movement.quantity) * Number(movement.unitValue));
     } else {
-      product.quantity -= Number(movement.quantity);
-      product.amount = Number(product.amount)
-      - (Number(movement.quantity) * Number(movement.unitValue));
+        if(product.quantity >= movement.quantity) {
+            product.quantity -= Number(movement.quantity);
+            product.amount = Number(product.unityValue) * product.quantity
+            //     - (Number(movement.quantity) * Number(movement.unitValue));
+        }else {
+            alert("O valor de saída é maior que o de entrada!")
+            return
+        }
     }
 
     if (product.quantity <= 0) {
@@ -84,23 +89,22 @@ export default function Modal({
               </select>
             </div>
 
-            {transactionType? (<div className="rounded-xl w-full lg:p-6  text-center">
+            <div className="rounded-xl w-full lg:p-6  text-center">
               <label htmlFor="vendor" className="lg:w-1/2 w-full lg:p-2">
-                Fornecedor:
+                  {transactionType === 'incoming' ? 'Fornecedor' : 'Projeto'}
               </label>
               <input
                 type="text"
-                name="vendor"
+                name= {transactionType === 'incoming' ? 'Fornecedor' : 'Projeto'}
                 id="vendor"
                 className="lg:w-1/2 w-full lg:p-2"
                 onChange={handleInputChange}
                 required
                 value={vendor}
               />
-            </div>)
-            : null }
+            </div>
 
-            {vendor? (<div className="rounded-xl w-full lg:p-6  text-center">
+            <div className="rounded-xl w-full lg:p-6  text-center">
               <label htmlFor="quantity" className="lg:w-1/2 w-full lg:p-2">
                 Quantidade:
               </label>
@@ -113,31 +117,29 @@ export default function Modal({
                 required
                 value={quantity}
               />
-            </div>)
-            : null }
-
-            {quantity? (<div className="rounded-xl w-full lg:p-6  text-center">
-              <label htmlFor="unitValue" className="lg:w-1/2 w-full lg:p-2">
-                Preço Unitário:
-              </label>
-              <input
-                type="text"
-                name="unitValue"
-                id="unitValue"
-                className="lg:w-1/2 w-full lg:p-2"
-                onChange={handleInputChange}
-                required
-                value={unitValue}
-              />
-            </div>)
-            : null }
+            </div>
+            {/*{quantity? (<div className="rounded-xl w-full lg:p-6  text-center">*/}
+            {/*  <label htmlFor="unitValue" className="lg:w-1/2 w-full lg:p-2">*/}
+            {/*    Preço Unitário:*/}
+            {/*  </label>*/}
+            {/*  <input*/}
+            {/*    type="text"*/}
+            {/*    name="unitValue"*/}
+            {/*    id="unitValue"*/}
+            {/*    className="lg:w-1/2 w-full lg:p-2"*/}
+            {/*    onChange={handleInputChange}*/}
+            {/*    required*/}
+            {/*    value={unitValue}*/}
+            {/*  />*/}
+            {/*</div>)*/}
+            {/*: null }*/}
 
           </form>
 
         </div>
         <div className="grid lg:grid-cols-2  place-items-center md:grid-cols-1 sm:grid-cols-1 p-4">
           <Button onClick={onCancel} properties={properties.cancel} text="Cancelar" />
-          {unitValue? <Button onClick={() => patchProduct(product)} properties={properties.success} text="Salvar"/> : null}
+          <Button onClick={() => patchProduct(product)} properties={properties.success} text="Salvar"/>
         </div>
       </div>
     </div>
