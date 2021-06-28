@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1b65ef9-b335-4942-8627-cd8e0c625dee" name="Default Changelist" comment="Input Cadastro update unityValue">
+    <list default="true" id="f1b65ef9-b335-4942-8627-cd8e0c625dee" name="Default Changelist" comment="Insert Transaction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/Modal/Modal.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/cadastro/Cadastro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/cadastro/Cadastro.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/products/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/products/Card.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,10 @@
       <updated>1624730158412</updated>
       <workItem from="1624730163985" duration="7691000" />
       <workItem from="1624877793626" duration="882000" />
-      <workItem from="1624898490670" duration="2929000" />
+      <workItem from="1624898490670" duration="3468000" />
+      <workItem from="1624902663738" duration="148000" />
+      <workItem from="1624902887848" duration="30000" />
+      <workItem from="1624903259353" duration="1778000" />
     </task>
     <servers />
   </component>
@@ -63,6 +66,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Input Cadastro update unityValue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Input Cadastro update unityValue" />
+    <MESSAGE value="Insert Transaction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Insert Transaction" />
   </component>
 </project>

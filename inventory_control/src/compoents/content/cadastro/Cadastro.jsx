@@ -46,7 +46,6 @@ export default function Cadastro(props) {
   }
 
   useEffect(() => {
-    console.log(editProduct)
     setName(editProduct.name)
     setDescription(editProduct.description)
     setQuantity(editProduct.quantity)

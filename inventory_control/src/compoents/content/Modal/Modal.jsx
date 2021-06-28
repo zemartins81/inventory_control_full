@@ -36,12 +36,12 @@ export default function Modal({
 
     if (!transactionType.localeCompare('incoming')) {
       product.quantity += Number(movement.quantity);
-      product.amount = Number(product.unityValue) * product.quantity
+      product.amount = (Number(product.unityValue) * product.quantity).toFixed(2)
       //+ (Number(movement.quantity) * Number(movement.unitValue));
     } else {
         if(product.quantity >= movement.quantity) {
             product.quantity -= Number(movement.quantity);
-            product.amount = Number(product.unityValue) * product.quantity
+            product.amount = (Number(product.unityValue) * product.quantity).toFixed(2)
             //     - (Number(movement.quantity) * Number(movement.unitValue));
         }else {
             alert("O valor de saída é maior que o de entrada!")
