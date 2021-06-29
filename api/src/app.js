@@ -1,12 +1,13 @@
 import express from 'express';
-import { config } from 'dotenv';
+import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
 // eslint-disable-next-line import/extensions
 import defaultRouter from './routes/defaultRouter.js';
 
-config({
+
+dotenv.config({
   path: './config/.env',
 });
 
