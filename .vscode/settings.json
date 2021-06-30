@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/03d51947-a8d5-469b-921f-76b28501d015/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/gpgestoque",
-    "appService.deploySubpath": "."
-}

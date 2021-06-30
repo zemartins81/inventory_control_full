@@ -42,7 +42,6 @@ export default function Cadastro(props) {
       setAlertVisible(true)
       setSuccessVisible(false)
     }
-
   }
 
   useEffect(() => {
@@ -54,7 +53,7 @@ export default function Cadastro(props) {
   }, [editProduct])
 
   useEffect(() => {
-    setEditProduct({...editProduct, amount})
+    setEditProduct(() => {return {...editProduct, amount}})
   }, [amount])
 
   useEffect(() => {
