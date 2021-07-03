@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f1b65ef9-b335-4942-8627-cd8e0c625dee" name="Default Changelist" comment="Insert Transaction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api/app.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloudbuild.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/cadastro/Cadastro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/cadastro/Cadastro.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory_control/src/services/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/src/services/apiService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -38,6 +34,13 @@
   </component>
   <component name="ReaderModeSettings">
     <option name="showLigatures" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="docker-deploy" />
+      </set>
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -61,6 +64,7 @@
       <workItem from="1625055651647" duration="2316000" />
       <workItem from="1625058323532" duration="3733000" />
       <workItem from="1625064880366" duration="486000" />
+      <workItem from="1625259284528" duration="2348000" />
     </task>
     <servers />
   </component>

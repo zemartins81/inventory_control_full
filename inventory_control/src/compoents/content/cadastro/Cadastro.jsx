@@ -50,15 +50,16 @@ export default function Cadastro(props) {
     setQuantity(editProduct.quantity)
     setUnit(editProduct.unit)
     setUnityValue(editProduct.unityValue)
-  }, [editProduct])
+  }, [editProduct, quantity, unityValue])
 
-  useEffect(() => {
-    setEditProduct(() => {return {...editProduct, amount}})
-  }, [amount])
+  function setAmountInEditProduct() {
+     setEditProduct({...editProduct, amount})
+  }
 
   useEffect(() => {
     const newAmount = Number(quantity) * (unityValue)
     setAmount(newAmount.toFixed(2));
+    setAmountInEditProduct()
   }, [quantity, unityValue])
 
   const handleInputChange = (event) => {
