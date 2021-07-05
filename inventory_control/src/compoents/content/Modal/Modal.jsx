@@ -11,9 +11,6 @@ export default function Modal({
   const [transactionType, setTransactionType] = useState("")
   const [vendor, setVendor] = useState(" ")
   const [quantity, setQuantity] = useState(" ")
-  //const [unitValue, setUnitValue] = useState(" ")
-
-
 
   const handleInputChange = (event) => {
     const target = event.currentTarget;
@@ -28,7 +25,6 @@ export default function Modal({
     setTransactionType(movement.transactionType)
     setVendor(movement.vendor)
     setQuantity(movement.quantity)
-    //setUnitValue(movement.unitValue)
   }, [movement])
 
    const patchProduct = async (product) => {
@@ -42,7 +38,6 @@ export default function Modal({
         if(product.quantity >= movement.quantity) {
             product.quantity -= Number(movement.quantity);
             product.amount = (Number(product.unityValue) * product.quantity).toFixed(2)
-            //     - (Number(movement.quantity) * Number(movement.unitValue));
         }else {
             alert("O valor de saída é maior que o de entrada!")
             return
@@ -68,9 +63,9 @@ export default function Modal({
         <div className="md:flex-grow">
 
            <div className="rounded-xl w-full lg:p-6  text-center">
-              <h3 className="text-center font-semibold text-4xl text-black ">
+              <h2 className="text-center font-semibold text-4xl text-black ">
                 {product.name}
-              </h3>
+              </h2>
 
             </div>
 
@@ -113,22 +108,6 @@ export default function Modal({
                 value={quantity}
                 />
             </div>
-
-              {/*{quantity? (<div className="rounded-xl w-full lg:p-6  text-center">*/}
-            {/*  <label htmlFor="unitValue" className="lg:w-1/2 w-full lg:p-2">*/}
-            {/*    Preço Unitário:*/}
-            {/*  </label>*/}
-            {/*  <input*/}
-            {/*    type="text"*/}
-            {/*    name="unitValue"*/}
-            {/*    id="unitValue"*/}
-            {/*    className="lg:w-1/2 w-full lg:p-2"*/}
-            {/*    onChange={handleInputChange}*/}
-            {/*    required*/}
-            {/*    value={unitValue}*/}
-            {/*  />*/}
-            {/*</div>)*/}
-            {/*: null }*/}
 
           </form>
 
