@@ -1,5 +1,5 @@
-import React, { useState, useEffect} from "react";
-import { useLocation, Redirect } from "react-router";
+import React, {useEffect, useState} from "react";
+import {Redirect, useLocation} from "react-router";
 import {patchUpdateProduct, postNewProduct} from "../../../services/apiService";
 import properties from "../Components/Button/properties.json";
 import Button from "../Components/Button/Button";
@@ -50,17 +50,15 @@ export default function Cadastro(props) {
     setQuantity(editProduct.quantity)
     setUnit(editProduct.unit)
     setUnityValue(editProduct.unityValue)
-  }, [editProduct, quantity, unityValue])
-
-  function setAmountInEditProduct() {
-     setEditProduct({...editProduct, amount})
-  }
+    setAmount(editProduct.amount)
+  }, [editProduct])
 
   useEffect(() => {
-    const newAmount = Number(quantity) * (unityValue)
-    setAmount(newAmount.toFixed(2));
-    setAmountInEditProduct()
-  }, [quantity, unityValue])
+    let newAmount = Number(quantity) * Number(unityValue)
+    newAmount = newAmount.toFixed(2)
+    setEditProduct({...editProduct, "amount": newAmount})
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[quantity, unityValue])
 
   const handleInputChange = (event) => {
 

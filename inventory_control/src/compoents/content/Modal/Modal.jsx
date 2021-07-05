@@ -85,40 +85,39 @@ export default function Modal({
                       required={true} value={transactionType}>
                 <option value="" readOnly={true}>Selecione o tipo</option>
                 <option value="incoming">Entrada</option>
-                <option value="outgoing">Saída</option>
+                <option value="outgoing" >Saída</option>
               </select>
             </div>
-
-            <div className="rounded-xl w-full lg:p-6  text-center">
-              <label htmlFor="vendor" className="lg:w-1/2 w-full lg:p-2">
-                  {transactionType === 'incoming' ? 'Fornecedor' : 'Projeto'}
-              </label>
-              <input
-                type="text"
-                name= {transactionType === 'incoming' ? 'Fornecedor' : 'Projeto'}
-                id="vendor"
-                className="lg:w-1/2 w-full lg:p-2"
-                onChange={handleInputChange}
-                required
-                value={vendor}
-              />
-            </div>
-
-            <div className="rounded-xl w-full lg:p-6  text-center">
-              <label htmlFor="quantity" className="lg:w-1/2 w-full lg:p-2">
-                Quantidade:
-              </label>
-              <input
-                type="text"
-                name="quantity"
-                id="quantity"
-                className="lg:w-1/2 w-full lg:p-2"
-                onChange={handleInputChange}
+              <div className="rounded-xl w-full lg:p-6  text-center">
+                  <label htmlFor="vendor" className="lg:w-1/2 w-full lg:p-2">
+                      {transactionType === 'incoming' ? 'Fornecedor' : 'Projeto'}
+                  </label>
+                  <input
+                      type="text"
+                      name= "vendor"
+                      id="vendor"
+                      className="lg:w-1/2 w-full lg:p-2"
+                      onChange={handleInputChange}
+                      required
+                      value={vendor}
+                  />
+              </div>
+                <div className="rounded-xl w-full lg:p-6  text-center">
+                <label htmlFor="quantity" className="lg:w-1/2 w-full lg:p-2">
+                    Quantidade:
+                </label>
+                <input
+                    type="text"
+                    name="quantity"
+                    id="quantity"
+                    className="lg:w-1/2 w-full lg:p-2"
+                    onChange={handleInputChange}
                 required
                 value={quantity}
-              />
+                />
             </div>
-            {/*{quantity? (<div className="rounded-xl w-full lg:p-6  text-center">*/}
+
+              {/*{quantity? (<div className="rounded-xl w-full lg:p-6  text-center">*/}
             {/*  <label htmlFor="unitValue" className="lg:w-1/2 w-full lg:p-2">*/}
             {/*    Preço Unitário:*/}
             {/*  </label>*/}
