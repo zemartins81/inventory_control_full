@@ -1,7 +1,7 @@
 import {get, patch, post} from "./httpService";
 
 export async function getProductList() {
-  return await get("https://apiestoque.azurewebsites.net");
+  return await get("https://apiestoque.azurewebsites.net/products");
 }
 
 export async function postNewProduct(product) {
