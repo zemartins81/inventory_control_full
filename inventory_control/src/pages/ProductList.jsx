@@ -84,7 +84,7 @@ const handleFilterChange = (event) => {
                type="text"
                name="findProducts"
                className="container my-2 text-xl px-3 py-3 bg-gray-50 rounded shadow-md outline-none focus:outline-none focus:shadow-outline "
-               placeholder="Busca Products"
+               placeholder="Busca Produtos"
                value={filterValue}
                onChange={handleFilterChange}
                />  
