@@ -66,13 +66,10 @@ export default function Modal({
       <div className="bg-black opacity-50 w-full h-full absolute z-10 inset-0" />
       <div className="bg-gray-200 rounded-lg md:max-w-md md:mx-auto p-4 inset-x-0 bottom-0 z-50 mb-4 mx-4 xl:relative">
         <div className="md:flex-grow">
-          <h1 className="text-center font-semibold text-4xl text-black">
-            Cadastrar Transação
-          </h1>
 
            <div className="rounded-xl w-full lg:p-6  text-center">
               <h3 className="text-center font-semibold text-4xl text-black ">
-                Nome: {product.name}
+                {product.name}
               </h3>
 
             </div>
@@ -137,8 +134,8 @@ export default function Modal({
 
         </div>
         <div className="grid lg:grid-cols-2  place-items-center md:grid-cols-1 sm:grid-cols-1 p-4">
-          <Button onClick={onCancel} properties={properties.cancel} text="Cancelar" />
           <Button onClick={() => patchProduct(product)} properties={properties.success} text="Salvar"/>
+          <Button onClick={onCancel} properties={properties.cancel} text="Cancelar" />
         </div>
       </div>
     </div>
