@@ -2,6 +2,8 @@ import React  from 'react'
 import {Link} from 'react-router-dom'
 import properties from "../Components/Button/properties.json"
 import Button from "../Components/Button/Button"
+import editIcon from "../../../assets/images/edit.png"
+import emBreve from "../../../assets/images/em-breve.png"
 
 export default function Card({product, handleShowModal}) {
 
@@ -25,7 +27,7 @@ export default function Card({product, handleShowModal}) {
 
         <div className="bg-white rounded-xl shadow-md">
             <div className="md:w-9/10 w-full shadow-md">
-                <img src="./img/embreve.jpg" alt="embreve.jpg" className="rounded-lg shadow-lg antialiased p-1"/>
+                <img src={emBreve} alt="embreve.jpg" className="rounded-lg shadow-lg antialiased p-1"/>
             </div>
             <div className="px-2 m-1 ">
                 <div className="container grid place-items-end">
@@ -33,7 +35,7 @@ export default function Card({product, handleShowModal}) {
                       pathname: `/produtos/${_id}`,
                       state: {product: product}
                     }}>
-                      <img src="./img/edit.png" alt="edit.png" className="w-6"/>
+                      <img src={editIcon} alt="edit.png" className="w-6"/>
                   </Link>
                 </div>
                 <h1 className="text-2xl text-black font-semibold leading-tight text-center">{name}</h1>
