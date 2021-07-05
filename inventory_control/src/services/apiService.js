@@ -5,9 +5,9 @@ export async function getProductList() {
 }
 
 export async function postNewProduct(product) {
-  return await post("https://apiestoque.azurewebsites.net", product);
+  return await post("https://apiestoque.azurewebsites.net/products", product);
 }
 
 export async function patchUpdateProduct(product) {
-  return await patch(`https://apiestoque.azurewebsites.net?id=${product._id}`, product)
+  return await patch(`https://apiestoque.azurewebsites.net/products?id=${product._id}`, product)
 }
