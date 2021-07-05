@@ -1,7 +1,7 @@
 ###
 //Get All
 
-GET http://172.22.52.221:3000/products
+GET http://localhost:3001/products
 Accept: application/json
 
 
