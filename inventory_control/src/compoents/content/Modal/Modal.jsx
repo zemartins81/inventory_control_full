@@ -83,7 +83,7 @@ export default function Modal({
               <div className="rounded-xl w-full lg:p-6  text-center">
                   <label htmlFor="vendor" className="lg:w-1/2 w-full lg:p-2">
                       {transactionType === 'incoming' ? 'Fornecedor' : 'Projeto'}
-                  </label>
+                 </label>
                   <input
                       type="text"
                       name= "vendor"

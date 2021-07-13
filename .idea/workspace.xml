@@ -2,9 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1b65ef9-b335-4942-8627-cd8e0c625dee" name="Default Changelist" comment="Insert Transaction">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/.idea/api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/database/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/middlewares/authMiddleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/routes/authRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/app.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/routes/defaultRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/routes/defaultRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/routes/productRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/routes/productRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/api/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/Modal/Modal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/cadastro/Cadastro.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/cadastro/Cadastro.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,26 +27,41 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1uUpixz2KL8OnyV0nEklxbVJdOS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GoStack/Node" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.17.2" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.17.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.eslint" value="" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path" value="wsl://Ubuntu-20.04@/usr/bin/node" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
     <option name="showLigatures" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu-20.04\home\jcmartins81\Projetos\inventory_control - v2\api\src\routes" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
@@ -42,6 +69,24 @@
         <option value="docker-deploy" />
       </set>
     </option>
+  </component>
+  <component name="RunManager" selected="HTTP Request.rest-api_1#1">
+    <configuration name="http-request#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/api/http-request.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="rest-api_1#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="rest-api_1#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" index="2" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.rest-api_1#1" />
+        <item itemvalue="HTTP Request.rest-api_1#2" />
+        <item itemvalue="HTTP Request.http-request#1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -68,6 +113,12 @@
       <workItem from="1625259284528" duration="2348000" />
       <workItem from="1625277725443" duration="71000" />
       <workItem from="1625314764946" duration="10992000" />
+      <workItem from="1625510847684" duration="1243000" />
+      <workItem from="1625519783960" duration="192000" />
+      <workItem from="1625711575427" duration="38000" />
+      <workItem from="1626124045709" duration="1153000" />
+      <workItem from="1626125397023" duration="45000" />
+      <workItem from="1626198448805" duration="11632000" />
     </task>
     <servers />
   </component>
@@ -87,6 +138,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Input Cadastro update unityValue" />
     <MESSAGE value="Insert Transaction" />
     <option name="LAST_COMMIT_MESSAGE" value="Insert Transaction" />

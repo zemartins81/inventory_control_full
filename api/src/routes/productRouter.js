@@ -1,7 +1,10 @@
 import express from 'express';
 import productService from '../services/productService.js';
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 const productRouter = express.Router();
+
+productRouter.use(authMiddleware)
 
 productRouter.get('/', async (req, res) => {
   if (req.query.id) {
