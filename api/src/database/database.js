@@ -9,7 +9,7 @@ dotenv.config({
   path: join(resolve(), './src/config/', '.env'),
 });
 
-const uri = process.env.MONGODB_CONNECTION;
+const uri = `mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_ADDRESS}:27017/${process.env.MONGO_DATABASE}`,
 const database = mongoose;
 
 database

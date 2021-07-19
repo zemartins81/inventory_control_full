@@ -2,7 +2,7 @@ version: "3"
 
 services:
   api:
-    image: node:14.17.1
+    image: 'node:14.17.1'
     container_name: inventory_backend
     restart: always
     networks:
@@ -10,7 +10,7 @@ services:
     ports:
       - 3001:3001
     volumes:
-      - ./api:/usr/src/app
+      - ../api:/usr/src/app
     working_dir: /usr/src/app
     command: bash -c "yarn && yarn dev"
     logging:
@@ -19,7 +19,7 @@ services:
         max-size: "10m"
         max-file: "5"
   frontend:
-    image:  node:14.17.1
+    image:  'node:14.17.1'
     container_name: inventory_control_front
     restart: always
     networks:
@@ -29,9 +29,25 @@ services:
     environment:
       - NODE_ENV=development
     volumes: # Volume binding
-      - ./inventory_control:/usr/src/app
+      - ../inventory_control:/usr/src/app
     working_dir: /usr/src/app
     command: bash -c "yarn && yarn start"
+  database:
+    image: 'mongo:4.2'
+    container_name: 'database'
+    restart: always
+    env_file:
+      - .env
+    environment:
+      - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+    volumes:
+      - ./mongo-volume:/data/db
+    networks:
+      - inventory_control_networks
+    ports:
+      - '27017-27019:27017-27019'
 
 networks:
   inventory_control_networks:

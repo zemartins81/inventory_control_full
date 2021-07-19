@@ -98,3 +98,10 @@ DELETE http://172.22.52.221:3000/products?id=609075d77f47c728e34e79cd
 Content-Type: application/json
 
 ###
+
+POST http://localhost:3001/auth/forgot_password
+Content-Type: application/json
+
+{
+  "email": "jcmartins81@outlook.com"
+}

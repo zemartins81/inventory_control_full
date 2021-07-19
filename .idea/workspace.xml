@@ -2,21 +2,42 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1b65ef9-b335-4942-8627-cd8e0c625dee" name="Default Changelist" comment="Insert Transaction">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/.idea/api.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/database/models/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/middlewares/authMiddleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/src/routes/authRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/WiredTiger" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/WiredTiger.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/WiredTiger.turtle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/WiredTiger.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/WiredTigerLAS.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/_mdb_catalog.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/collection-0-3613149614040271634.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/collection-2-3613149614040271634.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/collection-4-3613149614040271634.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/collection-8-3613149614040271634.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/diagnostic.data/metrics.2021-07-19T14-44-09Z-00000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/diagnostic.data/metrics.2021-07-19T14-47-24Z-00000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/diagnostic.data/metrics.2021-07-19T15-01-01Z-00000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/diagnostic.data/metrics.2021-07-19T18-53-37Z-00000" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/diagnostic.data/metrics.interim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-1-3613149614040271634.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-10-3613149614040271634.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-3-3613149614040271634.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-5-3613149614040271634.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-6-3613149614040271634.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-9-3613149614040271634.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/journal/WiredTigerLog.0000000005" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/journal/WiredTigerPreplog.0000000001" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/journal/WiredTigerPreplog.0000000002" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/mongod.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/sizeStorer.wt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/storage.bson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/app.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/routes/defaultRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/routes/defaultRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/routes/productRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/routes/productRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/api/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/Modal/Modal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/src/compoents/content/Modal/Modal.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/http-request.http" beforeDir="false" afterPath="$PROJECT_DIR$/api/http-request.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/database/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/database/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/resources/mail/mail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/routes/authRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/routes/authRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/services/mailerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/services/mailerService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/containers/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +46,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/containers/docker-compose.yml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1uUpixz2KL8OnyV0nEklxbVJdOS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -46,7 +70,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="wsl://Ubuntu-20.04@/usr/bin/node" />
@@ -119,6 +143,8 @@
       <workItem from="1626124045709" duration="1153000" />
       <workItem from="1626125397023" duration="45000" />
       <workItem from="1626198448805" duration="11632000" />
+      <workItem from="1626706696193" duration="840000" />
+      <workItem from="1626720660484" duration="426000" />
     </task>
     <servers />
   </component>

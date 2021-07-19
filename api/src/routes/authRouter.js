@@ -4,8 +4,10 @@ import jwt from 'jsonwebtoken';
 import path from 'path';
 import dotenv from 'dotenv';
 import crypto from 'crypto';
+// eslint-disable-next-line import/extensions
 import User from '../database/models/user.js';
-import MailerService from '../services/mailerService.js';
+// eslint-disable-next-line import/extensions
+import mailerService from '../services/mailerService.js';
 
 const { resolve, join } = path;
 
@@ -42,7 +44,7 @@ authRouter.post('/authenticate', async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email }).select('+password');
-    console.log({ user });
+
     if (!user) return res.status(400).send({ error: 'User not found' });
 
     if (!(await bcryptjs.compare(password, user.password)))
@@ -56,10 +58,11 @@ authRouter.post('/authenticate', async (req, res) => {
   }
 });
 
+// eslint-disable-next-line consistent-return
 authRouter.post('/forgot_password', async (request, response) => {
   try {
     const { email } = request.body;
-    const user = await User.find({ email });
+    const user = await User.find({});
 
     if (!user) return response.status(400).send({ error: 'User not found' });
 
@@ -77,10 +80,11 @@ authRouter.post('/forgot_password', async (request, response) => {
       },
     });
 
-    MailerService.sendMail(
+    await mailerService.sendMail(
       {
-        to: email,
         from: 'jcmartins81@outlook.com',
+        to: email,
+        subject: 'Forgot Password?',
         template: 'auth/forgot_password',
         context: { token },
       },
@@ -88,7 +92,7 @@ authRouter.post('/forgot_password', async (request, response) => {
         if (err)
           return response
             .status(400)
-            .send({ error: 'Cannot send forgot password email' });
+            .send({ error: 'Cannot send forgot password email', err });
 
         return response.send();
       }
