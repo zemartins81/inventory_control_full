@@ -1,4 +1,4 @@
-import express, { request, response } from 'express';
+import express from 'express';
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import path from 'path';
@@ -7,7 +7,7 @@ import crypto from 'crypto';
 // eslint-disable-next-line import/extensions
 import User from '../database/models/user.js';
 // eslint-disable-next-line import/extensions
-import mailerService from '../services/mailerService.js';
+import transport from '../services/mailerService.js';
 
 const { resolve, join } = path;
 
@@ -59,12 +59,12 @@ authRouter.post('/authenticate', async (req, res) => {
 });
 
 // eslint-disable-next-line consistent-return
-authRouter.post('/forgot_password', async (request, response) => {
+authRouter.post('/forgot_password', async (req, res) => {
   try {
-    const { email } = request.body;
-    const user = await User.find({});
+    const { email } = req.body;
+    const user = await User.findOne({ email });
 
-    if (!user) return response.status(400).send({ error: 'User not found' });
+    if (!user) return res.status(400).send({ error: 'User not found' });
 
     const token = crypto.randomBytes(20).toString('hex');
 
@@ -78,26 +78,50 @@ authRouter.post('/forgot_password', async (request, response) => {
       },
     });
 
-    await mailerService.sendMail(
+    await transport.sendMail(
       {
-        to: email,
         from: 'jcmartins81@outlook.com',
+        to: email,
         subject: 'Forgot Password?',
         template: 'auth/forgot_password',
         context: { token },
       },
-      (err) => {
-        if (err)
-          console.log(err)
-          return response
-            .status(400)
-            .send({ error: 'Cannot send forgot password email', err });
-
-        return response.send();
-      }
+      (err) =>
+        res.status(400).send({ error: 'Cannot send forgot password email' })
     );
+    return res.send();
   } catch (e) {
-    response.status(400).send({ error: 'Error on forgot password, try again' });
+    res.status(400).send({ error: 'Error on forgot password, try again' });
+  }
+});
+
+authRouter.post('/reset_password', async (req, res) => {
+  try {
+    const { email, token, password } = req.body;
+
+    const user = await User.findOne({ email }).select(
+      '+passwordResetToken passwordResetExpires'
+    );
+
+    if (!user) return res.status(400).send({ error: 'User not found' });
+
+    if (token !== user.passwordResetToken)
+      return res.status(400).send({ error: 'Token invalid' });
+
+    const now = new Date();
+
+    if (now > user.passwordResetExpires)
+      return res
+        .status(400)
+        .send({ error: 'Token expired, generate a new one' });
+
+    user.password = password;
+
+    await user.save();
+
+    res.send();
+  } catch (err) {
+    res.status(400).send({ error: 'Cannot reset password, try again' });
   }
 });
 

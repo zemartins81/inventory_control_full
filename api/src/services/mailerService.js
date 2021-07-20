@@ -9,7 +9,7 @@ dotenv.config({
   path: join(resolve(), './src/config/', '.env'),
 });
 
-const mailerService = nodemailer.createTransport({
+const transport = nodemailer.createTransport({
   host: process.env.MAILER_HOST,
   port: process.env.MAILER_PORT,
   auth: {
@@ -18,13 +18,18 @@ const mailerService = nodemailer.createTransport({
   },
 });
 
-mailerService.use(
+transport.use(
   'compile',
   hbs({
-    viewEngine: 'handlebars',
+    viewEngine: {
+      extname: '.html',
+      layoutsDir: 'views/email/',
+      defaultLayout: '',
+      partialsDir: 'views/partials/',
+    },
     viewPath: path.resolve('./src/resources/mail/'),
     extName: '.html',
   })
 );
 
-export default mailerService;
+export default transport;
