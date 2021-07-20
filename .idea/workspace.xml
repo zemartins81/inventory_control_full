@@ -2,42 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1b65ef9-b335-4942-8627-cd8e0c625dee" name="Default Changelist" comment="Insert Transaction">
-      <change afterPath="$PROJECT_DIR$/containers/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/WiredTiger" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/WiredTiger.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/WiredTiger.turtle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/WiredTiger.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/WiredTigerLAS.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/_mdb_catalog.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/collection-0-3613149614040271634.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/collection-2-3613149614040271634.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/collection-4-3613149614040271634.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/collection-8-3613149614040271634.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/diagnostic.data/metrics.2021-07-19T14-44-09Z-00000" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/diagnostic.data/metrics.2021-07-19T14-47-24Z-00000" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/diagnostic.data/metrics.2021-07-19T15-01-01Z-00000" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/diagnostic.data/metrics.2021-07-19T18-53-37Z-00000" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/diagnostic.data/metrics.interim" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-1-3613149614040271634.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-10-3613149614040271634.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-3-3613149614040271634.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-5-3613149614040271634.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-6-3613149614040271634.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/index-9-3613149614040271634.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/journal/WiredTigerLog.0000000005" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/journal/WiredTigerPreplog.0000000001" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/journal/WiredTigerPreplog.0000000002" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/mongod.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/sizeStorer.wt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/containers/mongo-volume/storage.bson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/http-request.http" beforeDir="false" afterPath="$PROJECT_DIR$/api/http-request.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/database/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/database/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/resources/mail/mail.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/routes/authRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/routes/authRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/services/mailerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/services/mailerService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/containers/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/containers/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/containers/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,18 +34,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/containers/.env" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/containers/docker-compose.yml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.eslint" value="" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="wsl://Ubuntu-20.04@/usr/bin/node" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.1.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -88,29 +59,24 @@
     </key>
   </component>
   <component name="RunDashboard">
-    <option name="configurationTypes">
+    <option name="excludedTypes">
       <set>
-        <option value="docker-deploy" />
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.rest-api_1#1">
-    <configuration name="http-request#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$PROJECT_DIR$/api/http-request.http" runType="Run single request">
+  <component name="RunManager">
+    <configuration name="DockerCompose" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="sourceFilePath" value="containers/docker-compose.yml" />
+          <option name="upExitCodeFromService" value="" />
+          <option name="upTimeout" value="" />
+        </settings>
+      </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="rest-api_1#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="rest-api_1#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_1.http" index="2" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="HTTP Request.rest-api_1#1" />
-        <item itemvalue="HTTP Request.rest-api_1#2" />
-        <item itemvalue="HTTP Request.http-request#1" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -145,6 +111,9 @@
       <workItem from="1626198448805" duration="11632000" />
       <workItem from="1626706696193" duration="840000" />
       <workItem from="1626720660484" duration="426000" />
+      <workItem from="1626733670950" duration="97000" />
+      <workItem from="1626733828554" duration="1584000" />
+      <workItem from="1626735456277" duration="7116000" />
     </task>
     <servers />
   </component>

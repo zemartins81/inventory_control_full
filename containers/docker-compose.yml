@@ -47,7 +47,7 @@ services:
     networks:
       - inventory_control_networks
     ports:
-      - '27017-27019:27017-27019'
+      - '27017:27017'
 
 networks:
   inventory_control_networks:

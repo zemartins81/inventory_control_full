@@ -33,7 +33,7 @@ authRouter.post('/register', async (req, res) => {
 
     user.password = undefined;
 
-    return res.send({ user, token: generateToken({ id: user.id }) });
+    return res.send({ user, token: generateToken({ id: user._id }) });
   } catch (e) {
     return res.status(400).send({ error: 'Registration failed' });
   }
@@ -66,8 +66,6 @@ authRouter.post('/forgot_password', async (request, response) => {
 
     if (!user) return response.status(400).send({ error: 'User not found' });
 
-    console.log(user);
-
     const token = crypto.randomBytes(20).toString('hex');
 
     const now = new Date();
@@ -82,14 +80,15 @@ authRouter.post('/forgot_password', async (request, response) => {
 
     await mailerService.sendMail(
       {
-        from: 'jcmartins81@outlook.com',
         to: email,
+        from: 'jcmartins81@outlook.com',
         subject: 'Forgot Password?',
         template: 'auth/forgot_password',
         context: { token },
       },
       (err) => {
         if (err)
+          console.log(err)
           return response
             .status(400)
             .send({ error: 'Cannot send forgot password email', err });
