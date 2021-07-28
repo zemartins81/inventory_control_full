@@ -1,31 +1,27 @@
-import jwt from 'jsonwebtoken'
-import path from "path";
-import dotenv from "dotenv";
-const { resolve, join } = path;
+import jwt from 'jsonwebtoken';
+import path from 'path';
+import dotenv from 'dotenv';
 
-dotenv.config({
-    path: join(resolve(), './src/config/', '.env'),
-});
+function extractToken(data) {
+  const token = data || '';
+  return token.replace('Bearer ', '');
+}
 
 export default function (req, res, next) {
-    const authHeader = req.headers.authorization;
+  const token = extractToken(req.headers.authorization);
 
-    if(!authHeader) return res.status(401).send({error: 'No token provided' })
+  jwt.verify(
+    token,
+    process.env.JWT_PUBLIC_KEY,
+    {
+      algorithm: 'RS256',
+    },
+    (err, decoded) => {
+      if (err) return res.status(401).send({ error: 'Token invalid' });
 
-    const parts = authHeader.split(' ')
+      req.userId = decoded.id;
 
-    if(!parts.length === 2) return res.status(401).send({ error: 'Token error'})
-
-    const [ scheme, token] = parts
-
-    if (!/^Bearer$/i.test(scheme)) return res.status(401).send({ error: 'Token malformatted'})
-
-    jwt.verify(token, process.env.AUTH_SECRET, (err, decoded) => {
-        if(err) return res.status(401).send({error: 'Token iinválid'})
-
-        req.userId = decoded.id
-
-        return next()
-    })
-
+      return next();
+    }
+  );
 }

@@ -1,6 +1,11 @@
-// eslint-disable-next-line import/extensions
 import bcrypt from 'bcryptjs';
+import { join, resolve } from 'path';
+import dotenv from 'dotenv';
 import database from '../database.js';
+
+dotenv.config({
+  path: join(resolve(), './src/config/.env'),
+});
 
 const userSchema = new database.Schema({
   name: {
@@ -17,15 +22,16 @@ const userSchema = new database.Schema({
   password: {
     type: String,
     required: true,
-    select: false,
   },
   passwordResetToken: {
     type: String,
-    select: false,
   },
   passwordResetExpires: {
     type: Date,
-    select: false,
+  },
+  role: {
+    type: String,
+    default: 'user',
   },
   createdAt: {
     type: Date,
@@ -38,8 +44,9 @@ const userSchema = new database.Schema({
 });
 
 userSchema.pre('save', async function (next) {
-  const hash = await bcrypt.hash(this.password, 10);
-  this.password = hash;
+  this.password = await bcrypt.hash(this.password, Number(process.env.ROUNDS));
+
+  next();
 });
 
 const User = database.model('User', userSchema);

@@ -4,3 +4,4 @@ containers/mongo-volume
 containers/.env
 containers/script
 
+*/node_modules/

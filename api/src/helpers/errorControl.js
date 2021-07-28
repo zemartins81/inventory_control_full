@@ -1,23 +1,23 @@
 const errorControl = {
   badRequest: () => ({
     statusCode: 400,
-    message: "Bad Request",
+    message: 'Bad Request',
   }),
   NotFound: () => ({
     statusCode: 404,
-    message: "Not Found",
+    message: 'Not Found',
   }),
   serverError: () => ({
     statusCode: 500,
-    message: "Internal Server Error",
+    message: 'Internal Server Error',
   }),
   dataNotSaved: () => ({
     statusCode: 500,
-    message: "Data not saved!",
+    message: 'Data not saved!',
   }),
   noContent: () => ({
     statusCode: 204,
-    message: "Product Not Found!",
+    message: 'Product Not Found!',
   }),
 };
 

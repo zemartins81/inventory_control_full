@@ -1,12 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f1b65ef9-b335-4942-8627-cd8e0c625dee" name="Default Changelist" comment="Insert Transaction">
+      <change afterPath="$PROJECT_DIR$/api/src/data/userData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/services/authService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/services/userService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/utils/token.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inventory_control.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inventory_control.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/database/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/database/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/helpers/errorControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/helpers/errorControl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/middlewares/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/middlewares/authMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/routes/authRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/routes/authRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/services/mailerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/services/mailerService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/yarn-error.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/api/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/routes/defaultRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/routes/defaultRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/.idea/frontend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/craco.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/assets/images/edit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/assets/images/edit.png:Zone.Identifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/assets/images/em-breve.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/assets/images/em-breve.png:Zone.Identifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/Components/Button/Button.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/Components/Button/properties.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/Loading.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/Modal/Modal.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/cadastro/Cadastro.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/menuPrincipal/MenuPrincipal.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/products/Card.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/compoents/content/products/Products.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/pages/ProductList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/services/apiService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/src/services/httpService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory_control/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/inventory_control/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.yarn-integrity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/bin/bcrypt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/dist/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/dist/bcrypt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/dist/bcrypt.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/dist/bcrypt.min.js.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/dist/bcrypt.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/externs/bcrypt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/externs/minimal-env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/scripts/build.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/impl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/prng/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/prng/accum.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/prng/isaac.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/src/bcrypt/util/base64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/src/bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/src/wrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/tests/quickbrown.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/bcryptjs/tests/suite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +107,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/containers/.env&#10;//wsl$/Ubuntu-20.04/home/jcmartins81/Projetos/inventory_control/api/node_modules/nodemailer-express-handlebars/index.js" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/containers/.env&#10;//wsl$/Ubuntu-20.04/home/jcmartins81/Projetos/inventory_control/api/node_modules/nodemailer-express-handlebars/index.js&#10;//wsl$/Ubuntu-20.04/home/jcmartins81/Projetos/inventory_control/api/src/config/.env" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.2" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/containers/docker-compose.yml" />
@@ -70,8 +144,6 @@
         <settings>
           <option name="envFilePath" value="" />
           <option name="sourceFilePath" value="containers/docker-compose.yml" />
-          <option name="upExitCodeFromService" value="" />
-          <option name="upTimeout" value="" />
         </settings>
       </deployment>
       <method v="2" />
@@ -114,6 +186,9 @@
       <workItem from="1626733828554" duration="1584000" />
       <workItem from="1626735456277" duration="7274000" />
       <workItem from="1626805972338" duration="7936000" />
+      <workItem from="1627065581988" duration="45000" />
+      <workItem from="1627391459576" duration="1655000" />
+      <workItem from="1627481670398" duration="13025000" />
     </task>
     <servers />
   </component>

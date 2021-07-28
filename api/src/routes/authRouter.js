@@ -3,11 +3,11 @@ import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import path from 'path';
 import dotenv from 'dotenv';
-import crypto from 'crypto';
-// eslint-disable-next-line import/extensions
+
 import User from '../database/models/user.js';
-// eslint-disable-next-line import/extensions
-import transport from '../services/mailerService.js';
+
+import { authenticate, forgotPassword } from '../services/authService.js';
+import { createUser } from '../services/userService.js';
 
 const { resolve, join } = path;
 
@@ -25,15 +25,12 @@ function generateToken(params = {}) {
 
 authRouter.post('/register', async (req, res) => {
   try {
-    const { email } = req.body;
-    if (await User.findOne({ email }))
-      return res.status(400).send({ error: 'User already exists' });
+    const result = await createUser(req.body);
+    if (result.error) return { error: result.error };
 
-    const user = await User.create(req.body);
+    const { _id } = result;
 
-    user.password = undefined;
-
-    return res.send({ user, token: generateToken({ id: user._id }) });
+    return res.send({ user: result, token: generateToken({ id: _id }) });
   } catch (e) {
     return res.status(400).send({ error: 'Registration failed' });
   }
@@ -42,17 +39,9 @@ authRouter.post('/register', async (req, res) => {
 authRouter.post('/authenticate', async (req, res) => {
   try {
     const { email, password } = req.body;
-
-    const user = await User.findOne({ email }).select('+password');
-
-    if (!user) return res.status(400).send({ error: 'User not found' });
-
-    if (!(await bcryptjs.compare(password, user.password)))
-      return res.status(400).send({ error: 'Invalid access data' });
-
-    user.password = undefined;
-
-    return res.send({ user, token: generateToken({ id: user.id }) });
+    const result = await authenticate(email, password);
+    if (result.error) return res.status(400).send({ error: result.error });
+    return res.send({ user: result });
   } catch (e) {
     return res.status(400).send(e);
   }
@@ -61,40 +50,15 @@ authRouter.post('/authenticate', async (req, res) => {
 // eslint-disable-next-line consistent-return
 authRouter.post('/forgot_password', async (req, res) => {
   try {
-    const { email } = req.body;
-    const user = await User.findOne({ email });
-
-    if (!user) return res.status(400).send({ error: 'User not found' });
-
-    const token = crypto.randomBytes(20).toString('hex');
-
-    const now = new Date();
-    now.setHours(now.getHours() + 1);
-
-    await User.findByIdAndUpdate(user.id, {
-      $set: {
-        passwordResetToken: token,
-        passwordResetExpires: now,
-      },
-    });
-
-    await transport.sendMail(
-      {
-        from: 'jcmartins81@outlook.com',
-        to: email,
-        subject: 'Forgot Password?',
-        template: 'auth/forgot_password',
-        context: { token },
-      },
-      (err) =>
-        res.status(400).send({ error: 'Cannot send forgot password email' })
-    );
-    return res.send();
+    const result = await forgotPassword(req.body);
+    if (result.error) return res.status(400).send({ error: result.error });
+    return res.send({ result });
   } catch (e) {
     res.status(400).send({ error: 'Error on forgot password, try again' });
   }
 });
 
+// TODO terminar de ajustar esta função
 authRouter.post('/reset_password', async (req, res) => {
   try {
     const { email, token, password } = req.body;

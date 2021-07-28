@@ -2,6 +2,7 @@ import express from 'express';
 import productRouter from './productRouter.js';
 import errorControl from '../helpers/errorControl.js';
 import authRouter from './authRouter.js';
+import auth from '../middlewares/authMiddleware.js';
 
 const defaultRouter = express.Router();
 
@@ -10,7 +11,7 @@ defaultRouter.get('/', (req, res) => {
 });
 
 defaultRouter.use('/auth', authRouter);
-defaultRouter.use('/products', productRouter);
+defaultRouter.use('/products', auth, productRouter);
 
 defaultRouter.use((req, res) =>
   res
