@@ -21,6 +21,7 @@ export async function resetPassword(email, token, password) {
 export async function createUser(newUser) {
   try {
     const user = await create(newUser);
+
     if (user.error) return { error: user.error };
 
     return user;

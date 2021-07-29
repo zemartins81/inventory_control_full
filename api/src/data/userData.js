@@ -1,4 +1,4 @@
-import User from '../database/models/user';
+import User from '../database/models/user.js';
 
 export async function findUserById(id) {
   try {
@@ -12,7 +12,7 @@ export async function findUserById(id) {
 
 export async function create(user) {
   try {
-    const existingUser = await User.findOne({ email });
+    const existingUser = await User.findOne({ email: user.email });
     if (existingUser)
       return { error: 'There is already a user with this email in the system' };
     const newUser = User.create(user);

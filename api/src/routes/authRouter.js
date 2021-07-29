@@ -26,7 +26,8 @@ function generateToken(params = {}) {
 authRouter.post('/register', async (req, res) => {
   try {
     const result = await createUser(req.body);
-    if (result.error) return { error: result.error };
+
+    if (result.error) return res.status(400).send({ error: result.error });
 
     const { _id } = result;
 
