@@ -7,6 +7,7 @@ import transport from './mailerService.js';
 export async function authenticate(email, password) {
   try {
     const user = await findUserByEmail(email);
+    console.log(user)
     if (user.error) return { error: user.error };
 
     if (!(await bcrypt.compare(password, user.password)))

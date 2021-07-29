@@ -26,8 +26,9 @@ export async function create(user) {
 
 export async function findUserByEmail(email) {
   try {
-    const user = await User.findOne({ email });
-    if (!user) return { error: 'User not found!' };
+    const user = await User.findOne(email);
+    console.log(user)
+    if (!user.email) return { error: 'User not found!' };
     return user;
   } catch (error) {
     return { error: 'Could not perform the query in the Database' };
