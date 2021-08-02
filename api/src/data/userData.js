@@ -26,8 +26,7 @@ export async function create(user) {
 
 export async function findUserByEmail(email) {
   try {
-    const user = await User.findOne(email);
-    console.log(user)
+    const user = await User.findOne({email});
     if (!user.email) return { error: 'User not found!' };
     return user;
   } catch (error) {
@@ -36,7 +35,10 @@ export async function findUserByEmail(email) {
 }
 
 export async function updateUser(id, params) {
-  await User.findByIdAndUpdate(id, { ...params }, (err, result) =>
-    err ? { error: 'Could not update user data' } : result
-  );
+
+  const result = await User.findByIdAndUpdate(id, { ...params })
+
+  console.log(result)
+
+    return result
 }

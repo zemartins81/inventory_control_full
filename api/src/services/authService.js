@@ -7,7 +7,7 @@ import transport from './mailerService.js';
 export async function authenticate(email, password) {
   try {
     const user = await findUserByEmail(email);
-    console.log(user)
+
     if (user.error) return { error: user.error };
 
     if (!(await bcrypt.compare(password, user.password)))
@@ -26,7 +26,8 @@ export async function authenticate(email, password) {
 
 export async function forgotPassword(email) {
   const user = await findUserByEmail(email);
-  if (!user) return { error: user.error };
+
+  if (user.error) return { error: user.error };
 
   const token = crypto.randomBytes(20).toString('hex');
   const now = new Date();
@@ -36,6 +37,9 @@ export async function forgotPassword(email) {
     passwordResetToken: token,
     passwordResetExpires: now,
   });
+
+  console.log(updatedUser)
+
   if (updatedUser.error) return { error: updatedUser.error };
 
   await transport.sendMail(
