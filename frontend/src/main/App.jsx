@@ -1,18 +1,18 @@
 import './App.css'
-import { Route, BrowserRouter, Switch } from 'react-router-dom'
-import Home from '../pages/home/Home'
-import Login from '../pages/login/Login'
-import Produtos from '../pages/produtos/Produtos'
+import React from 'react'
+import { Router } from 'react-router-dom'
+
+import Routes from './routes'
+import history from '../services/history'
+import { AuthProvider } from '../context/AuthContext'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/produtos" exact component={Produtos} />
-      </Switch>
-    </BrowserRouter>
+    <AuthProvider>
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </AuthProvider>
   )
 }
 

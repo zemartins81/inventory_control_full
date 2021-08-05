@@ -5,3 +5,5 @@ containers/.env
 containers/script
 
 */node_modules/
+
+./Diagrams

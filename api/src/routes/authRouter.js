@@ -41,9 +41,8 @@ authRouter.post('/authenticate', async (req, res) => {
   try {
     const { email, password } = req.body;
     const result = await authenticate(email, password);
-    console.log(result)
     if (result.error) return res.status(400).send({ error: result.error });
-    return res.send({ result });
+    return res.send({ ...result });
   } catch (e) {
     return res.status(400).send(e);
   }
@@ -52,9 +51,9 @@ authRouter.post('/authenticate', async (req, res) => {
 // eslint-disable-next-line consistent-return
 authRouter.post('/forgot_password', async (req, res) => {
   try {
-    const {email} = req.body
+    const { email } = req.body;
     const result = await forgotPassword(email);
-    console.log(result)
+    console.log(result);
     if (result.error) return res.status(400).send({ error: result.error });
     return res.send({ result });
   } catch (e) {

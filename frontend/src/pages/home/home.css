@@ -48,6 +48,8 @@ h2 {
   margin: 64px 0 24px;
   font-family: 'Poppins', sans-serif;
 }
-button {
-  padding: 10px;
+
+input{
+  padding: 5px;
+  margin: 10px;
 }
