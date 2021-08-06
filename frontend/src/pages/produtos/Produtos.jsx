@@ -1,24 +1,73 @@
-import { useContext, useEffect, useState } from 'react'
-import Button from '../../components/button/Button'
-import { Context } from '../../context/AuthContext'
+import { useEffect, useState } from 'react'
 import { getProducts } from '../../services/databaseService'
+import './produtos.css'
+
+import Header from '../../components/header/Header'
+import InsertProduct from '../../components/insertProduct/InsertProduct'
 
 export default function Produtos() {
-  const { handleLogout } = useContext(Context)
   const [products, setProducts] = useState([])
+  const [refreshList, setRefreshList] = useState(false)
+  const [filterValue, setFilterValue] = useState('')
+  const [insertProduct, setInsertProduct] = useState(false)
 
-  useEffect(async () => {
-    await setProducts(getProducts())
-    console.log(products)
-  }, [])
+  useEffect(() => {
+    const getAllProducts = async () => {
+      const productsList = await getProducts()
+      // eslint-disable-next-line func-names
+      const orderedList = await productsList.data.sort(function (a, b) {
+        const aName = a.name.toLowerCase()
+        const bName = b.name.toLowerCase()
+        // eslint-disable-next-line no-nested-ternary
+        return aName < bName ? -1 : aName > bName ? 1 : 0
+      })
+      setProducts(orderedList)
+    }
+    getAllProducts()
+      .then(() => {
+        setRefreshList(false)
+      })
+      // eslint-disable-next-line no-alert
+      .catch(() => alert('Não foi possível conectar ao Servidor!'))
+  }, [refreshList])
+
+  const newListProducts =
+    filterValue.trim() === ''
+      ? [...products]
+      : products.filter((product) =>
+          product.name.toLowerCase().includes(filterValue.toLowerCase()),
+        )
+
+  const handleFilterChange = (event) => {
+    setFilterValue(event.currentTarget.value)
+  }
+
+  const data = insertProduct ? (
+    <InsertProduct />
+  ) : (
+    <>
+      <input
+        type="text"
+        name="findProducts"
+        className="findProducts"
+        placeholder="Busca Produtos"
+        value={filterValue}
+        onChange={handleFilterChange}
+      />
+      <ul>
+        {newListProducts.map((product) => (
+          // eslint-disable-next-line no-underscore-dangle
+          <li key={product._id}>{product.name}</li>
+        ))}
+      </ul>
+    </>
+  )
 
   return (
-    <div>
-      <h1>Produtos</h1>
-
-      <Button type="submit" onClick={handleLogout}>
-        Sair
-      </Button>
+    <div className="container">
+      <Header insertProduct={(value) => setInsertProduct(value)} />
+      {data}
+      <div />
     </div>
   )
 }
