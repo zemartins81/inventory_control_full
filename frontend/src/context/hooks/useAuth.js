@@ -25,8 +25,7 @@ export default function useAuth() {
         .then((response) => response)
         .catch((error) => error)
       if (!data) {
-        alert('deu ruim')
-        history.push('/')
+        alert('Usuário ou senha incorretos!')
         return
       }
       const { token, user } = data
@@ -35,9 +34,10 @@ export default function useAuth() {
       localStorage.setItem('user', JSON.stringify(user))
       api.defaults.headers.Authorization = `Bearer ${token}`
       setAuthenticated(true)
+      setLoading(false)
       history.push('/produtos')
     } catch (e) {
-      console.log(e.message)
+      alert(e.message)
     }
   }
 

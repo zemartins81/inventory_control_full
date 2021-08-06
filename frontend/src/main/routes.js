@@ -14,7 +14,9 @@ function CustomRoute({ isPrivate, ...rest }) {
     return <h1>Loading....</h1>
   }
 
-  if (isPrivate && !authenticated) return <Redirect to="/" />
+  if (isPrivate && !authenticated) {
+    return <Redirect to="/" />
+  }
 
   // eslint-disable-next-line react/jsx-props-no-spreading
   return <Route {...rest} />
