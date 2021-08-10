@@ -50,6 +50,21 @@ h2 {
 }
 
 input{
-  padding: 5px;
   margin: 10px;
+  font-size: x-large;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #7c90f1;
+  outline: none;
+  box-shadow: #7c90f1;
+}
+
+input:hover{
+  filter: brightness(0.9);
+  outline: none;
+}
+
+Button:not(:disabled):hover {
+  filter: brightness(0.9);
 }

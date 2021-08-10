@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getProducts } from '../../services/databaseService'
+import { getProductList } from '../../services/apiService'
 import './produtos.css'
 
 import Header from '../../components/header/Header'
@@ -13,7 +13,8 @@ export default function Produtos() {
 
   useEffect(() => {
     const getAllProducts = async () => {
-      const productsList = await getProducts()
+      const productsList = await (await getProductList()).data
+      console.log(productsList)
       // eslint-disable-next-line func-names
       const orderedList = await productsList.data.sort(function (a, b) {
         const aName = a.name.toLowerCase()
@@ -21,6 +22,7 @@ export default function Produtos() {
         // eslint-disable-next-line no-nested-ternary
         return aName < bName ? -1 : aName > bName ? 1 : 0
       })
+
       setProducts(orderedList)
     }
     getAllProducts()

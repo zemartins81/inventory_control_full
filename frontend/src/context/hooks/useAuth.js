@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import api from '../../services/httpService'
+import httpService from '../../services/httpService'
 import history from '../../services/history'
 
 export default function useAuth() {
@@ -9,16 +9,17 @@ export default function useAuth() {
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
-      api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`
+      httpService.defaults.headers.Authorization = `Bearer ${token}`
       setAuthenticated(true)
+      history.push('/produtos')
     }
     setLoading(false)
   }, [])
 
   async function handleLogin(email, password) {
     try {
-      const { data } = await api
-        .post('/auth/authenticate', {
+      const { data } = await httpService
+        .post('http://localhost:3001/auth/authenticate', {
           email,
           password,
         })
@@ -32,7 +33,7 @@ export default function useAuth() {
 
       localStorage.setItem('token', JSON.stringify(token))
       localStorage.setItem('user', JSON.stringify(user))
-      api.defaults.headers.Authorization = `Bearer ${token}`
+      httpService.defaults.headers.Authorization = `Bearer ${token}`
       setAuthenticated(true)
       setLoading(false)
       history.push('/produtos')
@@ -44,7 +45,7 @@ export default function useAuth() {
   function handleLogout() {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
-    api.defaults.headers.Authorization = undefined
+    httpService.defaults.headers.Authorization = undefined
 
     setAuthenticated(false)
     history.push('/')
