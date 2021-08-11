@@ -4,7 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import { Context } from '../context/AuthContext'
 
 import Home from '../pages/home/Home'
-import Produtos from '../pages/produtos/Produtos'
+import Products from '../pages/products/Products'
 
 // eslint-disable-next-line react/prop-types
 function CustomRoute({ isPrivate, ...rest }) {
@@ -26,7 +26,7 @@ export default function Routes() {
   return (
     <Switch>
       <CustomRoute exact path="/" component={Home} />
-      <CustomRoute isPrivate exact path="/produtos" component={Produtos} />
+      <CustomRoute isPrivate exact path="/produtos" component={Products} />
     </Switch>
   )
 }

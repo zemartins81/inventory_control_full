@@ -18,7 +18,7 @@ const productSchema = new database.Schema({
     type: String,
     required: true,
   },
-  unityValue: {
+  unitPrice: {
     type: Number,
     required: true,
   },
@@ -31,11 +31,10 @@ const productSchema = new database.Schema({
       date: Date,
     },
   ],
-  amount: String,
-});
-
-productSchema.pre('save', function () {
-  this.amount = 0;
+  amount: {
+    type: Number,
+    defaultValue: 0,
+  },
 });
 
 const Product = database.model('Product', productSchema);

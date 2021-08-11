@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { getProductList } from '../../services/apiService'
-import './produtos.css'
+import './products.css'
 
 import Header from '../../components/header/Header'
 import InsertProduct from '../../components/insertProduct/InsertProduct'
 
-export default function Produtos() {
+export default function Products() {
   const [products, setProducts] = useState([])
   const [refreshList, setRefreshList] = useState(false)
   const [filterValue, setFilterValue] = useState('')
@@ -14,7 +14,7 @@ export default function Produtos() {
   useEffect(() => {
     const getAllProducts = async () => {
       const productsList = await (await getProductList()).data
-      console.log(productsList)
+
       // eslint-disable-next-line func-names
       const orderedList = await productsList.data.sort(function (a, b) {
         const aName = a.name.toLowerCase()
@@ -45,7 +45,7 @@ export default function Produtos() {
   }
 
   const data = insertProduct ? (
-    <InsertProduct />
+    <InsertProduct setRefreshList={setRefreshList} />
   ) : (
     <>
       <input
