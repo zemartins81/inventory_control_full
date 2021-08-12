@@ -1,18 +1,24 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from 'react'
 import Button from '../button/Button'
 import { postNewProduct, patchUpdateProduct } from '../../services/apiService'
+import './insertProduct.css'
 
-export default function InsertProduct({ product, setRefreshList }) {
+export default function InsertProduct({
+  product,
+  setRefreshList,
+  setInsertProduct,
+}) {
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
-  const [quantity, setQuantity] = useState()
+  const [quantity, setQuantity] = useState(0)
   const [unit, setUnit] = useState('')
-  const [unitPrice, setUnitPrice] = useState()
+  const [unitPrice, setUnitPrice] = useState(0)
   const [movements, setMovements] = useState([])
-  const [amount, setAmount] = useState('')
+  const [amount, setAmount] = useState(0)
   const [alertVisible, setAlertVisible] = useState(false)
   const [successVisible, setSuccessVisible] = useState(false)
   const [editProduct, setEditProduct] = useState(product)
@@ -30,11 +36,7 @@ export default function InsertProduct({ product, setRefreshList }) {
   }, [editProduct])
 
   useEffect(() => {
-    let value = Number(quantity) * Number(unitPrice)
-    value = value.toLocaleString('pt-br', {
-      style: 'currency',
-      currency: 'BRL',
-    })
+    const value = Number(quantity) * Number(unitPrice)
 
     setEditProduct({ ...editProduct, amount: value })
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -45,18 +47,17 @@ export default function InsertProduct({ product, setRefreshList }) {
 
     try {
       let result
-      console.log(editProduct)
-      // eslint-disable-next-line no-underscore-dangle
-      product._id
-        ? (result = await postNewProduct({ ...editProduct }))
-        : (result = await patchUpdateProduct({ ...editProduct }))
 
-      console.log(result)
+      editProduct._id
+        ? (result = await patchUpdateProduct({ ...editProduct }))
+        : (result = await postNewProduct({ ...editProduct }))
 
       if (result.status === 200) {
         setAlertVisible(false)
         setSuccessVisible(true)
         setRefreshList(true)
+        setInsertProduct(false)
+        setEditProduct(null)
       }
     } catch (e) {
       setAlertVisible(true)
@@ -76,7 +77,6 @@ export default function InsertProduct({ product, setRefreshList }) {
 
       setEditProduct({ ...editProduct, [name]: value })
     }
-    console.log(editProduct)
   }
 
   const Alert = () => (
@@ -103,8 +103,8 @@ export default function InsertProduct({ product, setRefreshList }) {
           <input
             type="text"
             required
-            name="nome"
-            id="nome"
+            name="name"
+            id="name"
             onChange={handleInputChange}
             value={name}
           />
@@ -168,7 +168,10 @@ export default function InsertProduct({ product, setRefreshList }) {
             disabled
             name="amount"
             id="amount"
-            value={amount}
+            value={amount.toLocaleString('pt-br', {
+              style: 'currency',
+              currency: 'BRL',
+            })}
           />
 
           <label htmlFor="movements">Movimentações: </label>

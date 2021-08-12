@@ -4,6 +4,7 @@ import './products.css'
 
 import Header from '../../components/header/Header'
 import InsertProduct from '../../components/insertProduct/InsertProduct'
+import Card from '../../components/card/Card'
 
 export default function Products() {
   const [products, setProducts] = useState([])
@@ -45,7 +46,10 @@ export default function Products() {
   }
 
   const data = insertProduct ? (
-    <InsertProduct setRefreshList={setRefreshList} />
+    <InsertProduct
+      setRefreshList={setRefreshList}
+      setInsertProduct={setInsertProduct}
+    />
   ) : (
     <>
       <input
@@ -56,20 +60,29 @@ export default function Products() {
         value={filterValue}
         onChange={handleFilterChange}
       />
-      <ul>
-        {newListProducts.map((product) => (
-          // eslint-disable-next-line no-underscore-dangle
-          <li key={product._id}>{product.name}</li>
-        ))}
-      </ul>
+      <aside>
+        <ul>
+          {newListProducts.map((product) => (
+            // eslint-disable-next-line no-underscore-dangle
+            <Card key={product._id} product={product} />
+          ))}
+        </ul>
+      </aside>
+      <main>
+        <ul>
+          {newListProducts.map((product) => (
+            // eslint-disable-next-line no-underscore-dangle
+            <Card key={product._id} product={product} />
+          ))}
+        </ul>
+      </main>
     </>
   )
 
   return (
     <div className="container">
       <Header insertProduct={(value) => setInsertProduct(value)} />
-      {data}
-      <div />
+      <div className="data">{data}</div>
     </div>
   )
 }

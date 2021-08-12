@@ -1,10 +1,10 @@
-.home{
+.home {
   display: flex;
   align-items: stretch;
   height: 100vh;
 }
 
-aside{
+aside {
   flex: 6;
   background: #7c90f1;
   color: #fff;
@@ -17,9 +17,8 @@ aside{
   align-items: center;
 }
 
-img{
+img {
   max-width: 320px;
-
 }
 
 strong {
@@ -49,9 +48,10 @@ h2 {
   font-family: 'Poppins', sans-serif;
 }
 
-input{
+input {
+  display: block;
   margin: 10px;
-  font-size: x-large;
+  font-size: 1.2rem;
   padding: 10px 20px;
   border-radius: 10px;
   background: #fff;
@@ -60,7 +60,7 @@ input{
   box-shadow: #7c90f1;
 }
 
-input:hover{
+input:hover {
   filter: brightness(0.9);
   outline: none;
 }

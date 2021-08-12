@@ -7,7 +7,9 @@ export async function getProductList() {
 }
 
 export async function postNewProduct(product) {
-  return post('http://localhost:3001/products', product)
+  const result = await post('http://localhost:3001/products', product)
+  console.log(result)
+  return result
 }
 
 export async function patchUpdateProduct(product) {

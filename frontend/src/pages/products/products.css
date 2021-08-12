@@ -1,24 +1,45 @@
-.container{
-    width: 80%;
-    margin: auto;
-    justify-content: center;
+.container {
+  width: 80%;
+  margin: auto;
+  justify-content: stretch;
 }
 
-.findProducts{
-    font-size: x-large;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: #fff;
-    border: 1px solid #7c90f1;
-    outline: none;
-    box-shadow: #7c90f1;
+.findProducts {
+  width: 100%;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #7c90f1;
+  outline: none;
+  box-shadow: #7c90f1;
 }
 
-.findProducts:hover{
-    filter: brightness(0.9);
-    outline: none;
+.findProducts:hover {
+  filter: brightness(0.9);
+  outline: none;
 }
 
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+}
 
+.data aside {
+  flex: 6;
+  background: #7c90f1;
+  color: #fff;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.data main {
+  flex: 8;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
