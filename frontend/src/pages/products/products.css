@@ -1,7 +1,6 @@
 .container {
   width: 80%;
   margin: auto;
-  justify-content: stretch;
 }
 
 .findProducts {
@@ -12,7 +11,7 @@
   background: #fff;
   border: 1px solid #7c90f1;
   outline: none;
-  box-shadow: #7c90f1;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .findProducts:hover {
@@ -22,24 +21,32 @@
 
 .data {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: stretch;
 }
 
-.data aside {
-  flex: 6;
+.list-Products {
+  border-radius: 10px;
   background: #7c90f1;
-  color: #fff;
-
+  flex: 8;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.data main {
-  flex: 8;
+.list-Products Button {
+  display: block;
+  width: 33 33%;
+
+  margin: 5px;
+}
+
+.list-Products h1:hover {
+  filter: brightness(0.9);
+}
+
+.product-details {
+  flex: 6;
   padding: 0 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 10px;
 }
