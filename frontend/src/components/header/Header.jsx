@@ -17,13 +17,13 @@ export default function Header({ insertProduct }) {
       <div className="header-right">
         <Button
           type="submit"
-          className="button_header"
+          className="button"
           onClick={() => insertProduct(false)}
         >
           Início
         </Button>
 
-        <Button type="button" className="button_header">
+        <Button type="button" className="button">
           <Link
             to={{
               pathname: `/produtos`,
@@ -37,20 +37,17 @@ export default function Header({ insertProduct }) {
                 },
               },
             }}
+            className="linkInsert"
             onClick={() => insertProduct(true)}
           >
             Cadastrar um Produto
           </Link>
         </Button>
 
-        <Button type="submit" className="button_header" onClick={handleLogout}>
+        <Button type="submit" className="button" onClick={handleLogout}>
           Relatórios
         </Button>
-        <Button
-          type="submit"
-          className="button_header sair"
-          onClick={handleLogout}
-        >
+        <Button type="submit" className="button sair" onClick={handleLogout}>
           Sair
         </Button>
       </div>
