@@ -8,7 +8,11 @@ import Button from '../button/Button'
 import { postNewProduct, patchUpdateProduct } from '../../services/apiService'
 import './insertProduct.css'
 
-export default function InsertProduct({ setRefreshList, setInsertProduct }) {
+export default function InsertProduct({
+  setRefreshList,
+  setInsertProduct,
+  setSelectedProduct,
+}) {
   const location = useLocation()
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
@@ -49,13 +53,14 @@ export default function InsertProduct({ setRefreshList, setInsertProduct }) {
       editProduct._id
         ? (result = await patchUpdateProduct({ ...editProduct }))
         : (result = await postNewProduct({ ...editProduct }))
-      console.log(result)
+
       if (result.status === 200) {
         setAlertVisible(false)
         setSuccessVisible(true)
         setRefreshList(true)
         setInsertProduct(false)
         setEditProduct(null)
+        setSelectedProduct({})
       }
     } catch (e) {
       setAlertVisible(true)

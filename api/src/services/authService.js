@@ -38,8 +38,6 @@ export async function forgotPassword(email) {
     passwordResetExpires: now,
   });
 
-  console.log(updatedUser)
-
   if (updatedUser.error) return { error: updatedUser.error };
 
   await transport.sendMail(

@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react'
 import { getProductList } from '../../services/apiService'
 import './products.css'
+import history from '../../services/history'
 
 import Header from '../../components/header/Header'
 import InsertProduct from '../../components/insertProduct/InsertProduct'
@@ -34,7 +35,10 @@ export default function Products() {
         setRefreshList(false)
       })
       // eslint-disable-next-line no-alert
-      .catch(() => alert('Não foi possível conectar ao Servidor!'))
+      .catch(() => {
+        alert('Não foi possível conectar ao Servidor!')
+        history.push('/')
+      })
   }, [refreshList])
 
   const newListProducts =
@@ -52,6 +56,7 @@ export default function Products() {
     <InsertProduct
       setRefreshList={setRefreshList}
       setInsertProduct={setInsertProduct}
+      setSelectedProduct={setSelectedProduct}
     />
   ) : (
     <>
@@ -81,6 +86,7 @@ export default function Products() {
             <Card
               product={selectedProduct}
               setInsertProduct={setInsertProduct}
+              setSelectedProduct={setSelectedProduct}
             />
           ) : (
             <h1>Selecione um produto para ver as mais detalhes</h1>
