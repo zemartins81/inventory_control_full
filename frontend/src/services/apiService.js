@@ -13,5 +13,5 @@ export async function postNewProduct(product) {
 
 export async function patchUpdateProduct(product) {
   // eslint-disable-next-line no-underscore-dangle
-  return patch(`http://localhost:3001?id=${product._id}`, product)
+  return patch(`http://localhost:3001/products?id=${product._id}`, product)
 }

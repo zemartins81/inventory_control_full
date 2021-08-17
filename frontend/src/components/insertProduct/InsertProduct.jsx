@@ -49,7 +49,7 @@ export default function InsertProduct({ setRefreshList, setInsertProduct }) {
       editProduct._id
         ? (result = await patchUpdateProduct({ ...editProduct }))
         : (result = await postNewProduct({ ...editProduct }))
-
+      console.log(result)
       if (result.status === 200) {
         setAlertVisible(false)
         setSuccessVisible(true)
