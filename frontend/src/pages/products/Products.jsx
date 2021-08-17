@@ -78,7 +78,10 @@ export default function Products() {
         </aside>
         <main className="product-details">
           {selectedProduct.name ? (
-            <Card product={selectedProduct} />
+            <Card
+              product={selectedProduct}
+              setInsertProduct={setInsertProduct}
+            />
           ) : (
             <h1>Selecione um produto para ver as mais detalhes</h1>
           )}

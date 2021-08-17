@@ -11,6 +11,7 @@ export default function useAuth() {
     if (token) {
       httpService.defaults.headers.Authorization = `Bearer ${token}`
       setAuthenticated(true)
+      setLoading(false)
       history.push('/produtos')
     }
     setLoading(false)

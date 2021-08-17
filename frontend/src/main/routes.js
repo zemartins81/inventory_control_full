@@ -26,7 +26,7 @@ export default function Routes() {
   return (
     <Switch>
       <CustomRoute exact path="/" component={Home} />
-      <CustomRoute isPrivate exact path="/produtos" component={Products} />
+      <CustomRoute isPrivate path="/produtos" component={Products} />
     </Switch>
   )
 }

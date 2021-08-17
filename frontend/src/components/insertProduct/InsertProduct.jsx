@@ -3,15 +3,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router'
 import Button from '../button/Button'
 import { postNewProduct, patchUpdateProduct } from '../../services/apiService'
 import './insertProduct.css'
 
-export default function InsertProduct({
-  product,
-  setRefreshList,
-  setInsertProduct,
-}) {
+export default function InsertProduct({ setRefreshList, setInsertProduct }) {
+  const location = useLocation()
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [quantity, setQuantity] = useState(0)
@@ -21,7 +19,7 @@ export default function InsertProduct({
   const [amount, setAmount] = useState(0)
   const [alertVisible, setAlertVisible] = useState(false)
   const [successVisible, setSuccessVisible] = useState(false)
-  const [editProduct, setEditProduct] = useState(product)
+  const [editProduct, setEditProduct] = useState(location.state.product)
 
   useEffect(() => {
     if (editProduct) {

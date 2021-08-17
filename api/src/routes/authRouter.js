@@ -53,7 +53,6 @@ authRouter.post('/forgot_password', async (req, res) => {
   try {
     const { email } = req.body;
     const result = await forgotPassword(email);
-    console.log(result);
     if (result.error) return res.status(400).send({ error: result.error });
     return res.send({ result });
   } catch (e) {

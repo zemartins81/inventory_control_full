@@ -1,10 +1,10 @@
 import express from 'express';
 import productService from '../services/productService.js';
-import authMiddleware from "../middlewares/authMiddleware.js";
+import authMiddleware from '../middlewares/authMiddleware.js';
 
 const productRouter = express.Router();
 
-productRouter.use(authMiddleware)
+productRouter.use(authMiddleware);
 
 productRouter.get('/', async (req, res) => {
   if (req.query.id) {
@@ -27,7 +27,7 @@ productRouter.get('/', async (req, res) => {
 });
 
 productRouter.post('/', async (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   const product = req.body;
   const result = await productService.setProduct(product);
   return res.status(result.status).send(result);

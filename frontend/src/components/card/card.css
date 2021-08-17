@@ -15,15 +15,33 @@
   align-self: center;
 }
 
+.title-product{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#edit {
+  max-width: 10%;
+}
+
 .card strong {
   font: 700 36px 'Poppins', sans-serif;
-  line-height: 42px;
-  margin-top: 16px;
   text-align: center;
 }
 
 p {
   margin: 10px;
-  font: 400 24px 'Poppins', sans-serif;
+  font: 400 20px 'Poppins', sans-serif;
   word-break: break-all;
 }
+
+.inOut {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inOut img {
+  max-width: 10%;
+}
+
