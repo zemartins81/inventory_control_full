@@ -15,8 +15,18 @@ export default function Card({ product, setInsertProduct }) {
     unit,
     unitPrice,
     amount,
-    movements = {},
+    movements,
   } = product
+
+  const handleClick = () => {
+    movements.push({
+      transactionType: 'incoming',
+      vendor: 'Aquimpel',
+      quantityMovement: 1,
+      unityValue: unit,
+      date: Date.now(),
+    })
+  }
 
   return (
     <div className="card">
@@ -52,10 +62,47 @@ export default function Card({ product, setInsertProduct }) {
         {amount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
       </p>
       <div className="inOut">
-        <Button className="button incoming">+</Button>
+        <Button className="button incoming" onClick={handleClick}>
+          +
+        </Button>
         <Button className="button outgoing">-</Button>
       </div>
-      {movements}
+      {movements.length > 0 && (
+        <div className="movements">
+          <h3>Movimentações</h3>
+          <table>
+            <tr>
+              <th>Data</th>
+              <th>Tipo</th>
+              <th>Vendor</th>
+              <th>Quantidade</th>
+              <th>Preço Unitário</th>
+              <th>Valor</th>
+            </tr>
+
+            {movements.map((movement) => {
+              const {
+                transactionType,
+                vendor,
+                quantityMovement,
+                unityValue,
+                date,
+              } = movement
+              return (
+                // eslint-disable-next-line no-underscore-dangle
+                <tr key={movement._id}>
+                  <td>{date}</td>
+                  <td>{transactionType}</td>
+                  <td>{vendor}</td>
+                  <td>{quantityMovement}</td>
+                  <td>{unityValue}</td>
+                  <td>{quantityMovement * unityValue}</td>
+                </tr>
+              )
+            })}
+          </table>
+        </div>
+      )}
     </div>
   )
 }

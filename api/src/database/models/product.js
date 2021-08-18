@@ -26,7 +26,7 @@ const productSchema = new database.Schema({
     {
       transactionType: String,
       vendor: String,
-      quantity: Number,
+      quantityMovement: Number,
       unityValue: Number,
       date: Date,
     },
