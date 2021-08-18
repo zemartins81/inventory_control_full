@@ -15,14 +15,14 @@
   align-self: center;
 }
 
-.title-product {
+.title-product{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
 #edit {
-  max-width: 40px;
+  max-width: 10%;
 }
 
 .card strong {
@@ -44,3 +44,4 @@ p {
 .inOut img {
   max-width: 10%;
 }
+

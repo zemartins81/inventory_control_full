@@ -7,10 +7,8 @@ export default function useAuth() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    let token = localStorage.getItem('token')
-
+    const token = localStorage.getItem('token')
     if (token) {
-      token = token.replace(/"/g, '')
       httpService.defaults.headers.Authorization = `Bearer ${token}`
       setAuthenticated(true)
       setLoading(false)

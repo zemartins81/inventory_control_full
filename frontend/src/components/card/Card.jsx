@@ -4,7 +4,8 @@ import './card.css'
 import { Link } from 'react-router-dom'
 import embreve from '../../assets/img/embreve.png'
 import edit from '../../assets/img/edit.png'
-import Button from '../button/Button'
+import input from '../../assets/img/add.png'
+import output from '../../assets/img/negative.png'
 
 export default function Card({ product, setInsertProduct }) {
   const { _id, name, description, quantity, unit, unitPrice, amount } = product
@@ -41,8 +42,8 @@ export default function Card({ product, setInsertProduct }) {
         {amount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
       </p>
       <div className="inOut">
-        <Button className="button incoming">+</Button>
-        <Button className="button outgoing">-</Button>
+        <img src={input} alt="Entrada de Produtos" />
+        <img src={output} alt="Saída de Produtos" />
       </div>
     </div>
   )
