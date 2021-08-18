@@ -45,11 +45,3 @@ p {
   display: flex;
   justify-content: space-between;
 }
-
-.incoming {
-  background: #2ecc71;
-}
-
-.outgoing {
-  background: #e74c3c;
-}

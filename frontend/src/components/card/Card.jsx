@@ -52,8 +52,8 @@ export default function Card({ product, setInsertProduct }) {
         {amount.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
       </p>
       <div className="inOut">
-        <Button classname="button incoming">+</Button>
-        <Button classname="button outgoing">-</Button>
+        <Button className="button incoming">+</Button>
+        <Button className="button outgoing">-</Button>
       </div>
       {movements}
     </div>

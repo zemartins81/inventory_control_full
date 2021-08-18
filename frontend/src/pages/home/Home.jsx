@@ -24,7 +24,9 @@ export default function Home() {
         Ja possui cadastro? <br />
       </h2>
       {/* eslint-disable-next-line react/button-has-type */}
-      <Button onClick={handleClick}>Acessar</Button>
+      <Button className="button" onClick={handleClick}>
+        Acessar
+      </Button>
     </div>
   ) : (
     <div className="main-content">
@@ -50,7 +52,7 @@ export default function Home() {
           onChange={(event) => setPassword(event.currentTarget.value)}
           value={password}
         />
-        <Button type="submit" onClick={handleSession}>
+        <Button type="submit" className="button" onClick={handleSession}>
           Entrar
         </Button>
       </form>

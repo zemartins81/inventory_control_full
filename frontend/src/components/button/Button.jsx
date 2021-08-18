@@ -5,7 +5,7 @@ function Button(props) {
   return (
     <div>
       {/* eslint-disable-next-line react/button-has-type,react/jsx-props-no-spreading */}
-      <button className="button" {...props} />
+      <button {...props} />
     </div>
   )
 }

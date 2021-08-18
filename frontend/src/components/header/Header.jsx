@@ -17,7 +17,7 @@ export default function Header({ insertProduct }) {
       <div className="header-right">
         <Button
           type="submit"
-          className="button_header"
+          className="button"
           onClick={() => insertProduct(false)}
         >
           Início
@@ -41,21 +41,17 @@ export default function Header({ insertProduct }) {
         >
           <Button
             type="submit"
-            className="button_header"
+            className="button"
             onClick={() => insertProduct(true)}
           >
             Cadastrar um Produto
           </Button>
         </Link>
 
-        <Button type="submit" className="button_header" onClick={handleLogout}>
+        <Button type="submit" className="button" onClick={handleLogout}>
           Relatórios
         </Button>
-        <Button
-          type="submit"
-          className="button_header sair"
-          onClick={handleLogout}
-        >
+        <Button type="submit" className="logout button" onClick={handleLogout}>
           Sair
         </Button>
       </div>

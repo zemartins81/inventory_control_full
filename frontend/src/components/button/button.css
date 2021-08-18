@@ -1,16 +1,27 @@
 .button {
-    height: 50px;
-    border-radius: 8px;
-    font-size: 24px;
-    font-weight: 500;
-    background: #7c90f1;
-    color: #fff;
-    padding: 0 32px;
-    margin-top: 5px;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 500;
+  background: #7c90f1;
+  color: #fff;
+  padding: 0 32px;
+  margin-top: 5px;
 
-    cursor: pointer;
-    border: 0;
+  cursor: pointer;
+  border: 0;
 
-    transition: filter 0.2s;
+  transition: filter 0.2s;
 }
 
+.logout {
+  background: #e74c3c;
+}
+
+.incoming {
+  background: #2ecc71;
+}
+
+.outgoing {
+  background: #e74c3c;
+}

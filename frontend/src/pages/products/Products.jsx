@@ -70,6 +70,7 @@ export default function Products() {
             <Button
               key={product._id}
               onClick={() => setSelectedProduct(product)}
+              className="button"
             >
               {product.name}
             </Button>
