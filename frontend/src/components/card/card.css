@@ -1,7 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   max-height: fit-content;
   margin: auto;
   border-radius: 10px;
@@ -10,12 +10,17 @@
   background: #ffd672;
 }
 
+.card-link {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .card img {
   max-width: 50%;
   align-self: center;
 }
 
-.title-product{
+.title-product {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -48,4 +53,3 @@ p {
 .outgoing {
   background: #e74c3c;
 }
-

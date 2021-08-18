@@ -20,19 +20,21 @@ export default function Card({ product, setInsertProduct }) {
 
   return (
     <div className="card">
+      <Link
+        to={{
+          pathname: `/produtos/${_id}`,
+          state: { product },
+        }}
+        className="card-link"
+        onClick={() => setInsertProduct(true)}
+      >
+        <img src={edit} alt="Editar Produto" id="edit" />
+      </Link>
+
       <img src={embreve} alt="Em breve" />
 
       <div className="title-product">
         <strong>{name}</strong>
-        <Link
-          to={{
-            pathname: `/produtos/${_id}`,
-            state: { product },
-          }}
-          onClick={() => setInsertProduct(true)}
-        >
-          <img src={edit} alt="Editar Produto" id="edit" />
-        </Link>
       </div>
       <p>Descrição: {description}</p>
       <p>
