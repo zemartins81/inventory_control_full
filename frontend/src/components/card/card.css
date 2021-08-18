@@ -41,7 +41,11 @@ p {
   justify-content: space-between;
 }
 
-.inOut img {
-  max-width: 10%;
+.incoming {
+  background: #2ecc71;
+}
+
+.outgoing {
+  background: #e74c3c;
 }
 

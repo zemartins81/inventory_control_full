@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import './header.css'
+import { Link } from 'react-router-dom'
 import Button from '../button/Button'
 import { Context } from '../../context/AuthContext'
 import estoque from '../../assets/img/estoque.png'
@@ -21,13 +22,32 @@ export default function Header({ insertProduct }) {
         >
           Início
         </Button>
-        <Button
-          type="submit"
-          className="button_header"
-          onClick={() => insertProduct(true)}
+
+        <Link
+          to={{
+            pathname: `/produtos`,
+            state: {
+              product: {
+                name: '',
+                description: '',
+                quantity: 0,
+                unit: '',
+                unitPrice: 0,
+                movements: [],
+                amount: 0,
+              },
+            },
+          }}
         >
-          Cadastrar um Produto
-        </Button>
+          <Button
+            type="submit"
+            className="button_header"
+            onClick={() => insertProduct(true)}
+          >
+            Cadastrar um Produto
+          </Button>
+        </Link>
+
         <Button type="submit" className="button_header" onClick={handleLogout}>
           Relatórios
         </Button>

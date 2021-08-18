@@ -67,7 +67,6 @@ export default function Products() {
         <aside className="list-Products">
           {newListProducts.map((product) => (
             // eslint-disable-next-line no-underscore-dangle
-
             <Button
               key={product._id}
               onClick={() => setSelectedProduct(product)}

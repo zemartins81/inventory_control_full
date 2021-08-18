@@ -55,7 +55,7 @@ export default function InsertProduct({ setRefreshList, setInsertProduct }) {
         setSuccessVisible(true)
         setRefreshList(true)
         setInsertProduct(false)
-        setEditProduct(null)
+        setEditProduct({})
       }
     } catch (e) {
       setAlertVisible(true)
