@@ -1,4 +1,5 @@
 // eslint-disable-next-line import/extensions
+import { uuid } from 'uuidv4';
 import database from '../database.js';
 
 const productSchema = new database.Schema({
@@ -24,6 +25,11 @@ const productSchema = new database.Schema({
   },
   movements: [
     {
+      id: {
+        type: String,
+        required: true,
+        default: uuid(),
+      },
       transactionType: String,
       vendor: String,
       quantityMovement: Number,
